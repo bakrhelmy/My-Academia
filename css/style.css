@@ -100,6 +100,14 @@ nav a {
     width: 100%;
     height: auto;
 }
+
+
+.menu-bar {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    display: none;
+}
 /* Services Section */
 .services-section {
     text-align: center;
@@ -688,3 +696,4 @@ footer {
         font-size: 1.1rem;
     }
 }
+
