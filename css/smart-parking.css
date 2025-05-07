@@ -1,0 +1,229 @@
+/* === الأساسيات العامة === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ccc;
+ 
+}
+
+/* === الصفحة الرئيسية والخلفية === */
+.home {
+    background-image: url("https://i.postimg.cc/qqDPXpjS/full-car-parking-lot-mall.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: for parallax effect */
+    height: 100vh; /* Changed from 86vh to full viewport height */
+    padding: 5px 0 10px 0;
+    position: relative;
+}
+
+/* Optional overlay to improve text readability */
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+}
+
+/* Make sure content appears above overlay */
+.front, header {
+    position: relative;
+    z-index: 1;
+}
+
+/* === باقي الأكواد كما هي === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+}
+.logo img {
+    width: 80%;
+
+    margin-right: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+/* === الجزء الأمامي من الصفحة === */
+.front {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 52px;
+}
+
+.discription {
+    padding-top: 200px;
+    
+    width:50%;
+}
+
+.text h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.text p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.butt .btn {
+    background-color: #09c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 156, 204, 0.3);
+}
+
+.butt .btn:hover {
+    background-color: #0788b0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 156, 204, 0.4);
+}
+
+.imgg {
+    width: 50%;
+}
+
+.imgg img {
+    width: 100%;
+    height: auto;
+}
+
+/* === قسم كيف يعمل النظام === */
+.how-it-works {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #181818;
+}
+
+.how-it-works h1 {
+    text-align: center;
+    padding: 0 33px;
+    color: #888bff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.intro {
+    width: 60%;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #aaa;
+}
+
+.component {
+    padding-left: 40px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.component-img {
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+.component-img img {
+    padding: 20px;
+    max-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.component-content {
+    flex: 2 1 400px;
+}
+
+.component-content h2 {
+    color: #888bff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.component-content p {
+    line-height: 1.6em;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.divider {
+    width: 30%;
+    height: 3px;
+    background: #888bff;
+    margin: 45px 0 50px 0;
+    opacity: 0.4;
+}
+
+/* === الاسم بين الأقسام === */
+.nameofcom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameofcom h2 {
+    color: #888bff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* === جزء الاتصال/الخاتمة === */
+.conn {
+    background-color: #111;
+    padding: 20px;
+}
+
+/* === استجابة الهواتف والشاشات الصغيرة === */
+@media (max-width: 768px) {
+    .component {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .component-content {
+        text-align: left;
+    }
+
+    .front {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .discription, .imgg {
+        width: 100%;
+    }
+}

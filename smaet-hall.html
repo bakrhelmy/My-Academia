@@ -12,38 +12,42 @@
 </head>
 <body>
     <body>
-      <header>
-        <div class="logo"><a><img src="images/Icon[1].png" alt=""></a></div>
-        <nav>
+      <div class="home">
+
+        <header>
+          <div class="logo"><a><img src="images/Icon[1].png" alt=""></a></div>
+          <nav>
             <a href="index.html">Home</a>
             <a href="./Project-components.html">Project components</a>
-                <a href="./technologies-used.html">Technologies Used</a>
-          <a href="#">About My Academia</a>
-          <a href="#">Contact Us</a>
-        </nav>
-      </header>
-      <section>
-        <div class="home">
-            <div class="container">
-                <div class="front">
-
-                    <div class="discription">
-                        <div class="text">
-                            <h1>Technologies Powering My Academia</h1>
-                            <p>Discover the cutting-edge hardware and software technologies that make our smart academy system innovative and efficient.</p>
-                        </div>
-                        <div class="butt">
-                             <!-- <button class="btn">Explore More</button> -->
-                        </div>
-                    </div>
-                    <div class="imgg">
-                        <img src="./images/Blog post-amico.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
+            <a href="./technologies-used.html">Technologies Used</a>
+            <a href="about.html">About My Academia</a>
+            <a href="contact.html">Contact Us</a>
+          </nav>
+        </header>
+        <section>
+              <div class="container">
+                  <div class="front">
+  
+                      <div class="discription">
+                          <div class="text">
+                              <h1>Technologies Powering My Academia</h1>
+                              <p>Discover the cutting-edge hardware and software technologies that make our smart academy system innovative and efficient.</p>
+                          </div>
+                          <div class="butt">
+                               <!-- <button class="btn">Explore More</button> -->
+                          </div>
+                      </div>
+                      <!-- <div class="imgg">
+                          <img src="./images/Blog post-amico.png" alt="">
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+        </section>
+          </div>
       
+          
+        <section class="conn">
         <section class="how-it-works">
             <div class="nameofcom">
               <div class="divider"></div>
@@ -160,7 +164,7 @@
                 <!-- <h1>How it works?</h1> -->
                 <div class="nameofcom">
                 <div class="divider"></div>
-                <h2>ESP32-CAM – Smart Hall Controller</h2>  
+                <h2>ESP32-CAM </h2>  
                 <div class="divider"></div>
                 </div>
             
@@ -183,13 +187,37 @@
                 </div>
                 </div>
             </section>
+            <section class="how-it-works">
+              <!-- <h1>How it works?</h1> -->
+              <div class="nameofcom">
+                <div class="divider"></div>
+                <h2> 12V Fan </h2>  
+                <div class="divider"></div>
+              </div>
+            
+              <div class="component">
+                <div class="component-img">
+                  <img src="images/DC 5010 5V_12V_24V Computer CPU Kühler Mini Lüfter 50MM Kleiner Abluftventilator für 3D-Drucker 2.png" alt="12V Fan" />
+                </div>
+                <div class="component-content">
+                  <p>
+                    <strong>🔍 What it does:</strong> Provides automatic cooling for the garden area to maintain optimal environmental conditions.<br><br>
+            
+                    <strong>⚙️ How it works:</strong><br>
+                    - Operated through a <strong>relay module</strong>, similar to the water pump.<br>
+                    - The <strong>ESP32</strong> activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
+                    - Helps protect plants from heat stress in hot weather.
+                  </p>
+                </div>
+              </div>
+            </section>
             
 
             <section class="how-it-works">
                 <!-- <h1>How it works?</h1> -->
                 <div class="nameofcom">
                 <div class="divider"></div>
-                <h2> ESP32 Module – Central Hub for My Academia</h2>  
+                <h2> ESP32 Module</h2>  
                 <div class="divider"></div>
                 </div>
             
@@ -212,70 +240,13 @@
                     <strong>🔍 What it does:</strong> Transmits sensor data to <strong>Firebase</strong> and receives commands from the mobile app.<br>
                     <strong>⚙️ How it works:</strong> <br>The built-in <strong>Wi-Fi module</strong> connects to a local network.<br>Uses <strong>HTTP/MQTT protocols</strong> to sync data with Firebase in real-time.<br><br>
             
-                    <strong>4. Actuator Control</strong><br>
-                    <strong>🔍 What it does:</strong> Controls high-power devices (e.g., LEDs, pumps, fans) via <strong>relay modules</strong>.<br>
-                    <strong>⚙️ How it works:</strong> <br>GPIO pins send <strong>3.3V signals</strong> to relay modules, which switch <strong>12V/24V circuits</strong> (e.g., turning on a water pump).<br><br>
-            
-                    <strong>5. Power Management</strong><br>
-                    <strong>🔍 What it does:</strong> Optimizes energy consumption for systems that are always on.<br>
-                    <strong>⚙️ How it works:</strong> <br>Uses <strong>deep sleep mode</strong> during inactivity (e.g., parking sensors at night).
-                    </p>
+                   </p>
                 </div>
-                </div>
+                <img src="./images/NodeMcu ESP-32S Lua ESP-WROOM-32 WIFI Development Board.png" alt="ESP32 Board" width="300">
+              </div>
             </section>
+          </section>
             
-            <section class="how-it-works">
-                <!-- <h1>How it works?</h1> -->
-                <div class="nameofcom">
-                  <div class="divider"></div>
-                  <h2>HW-201 IR Sensor – Smart Parking Detection</h2>  
-                  <div class="divider"></div>
-                </div>
-              
-                <div class="component">
-                  <div class="component-img">
-                    <img src="images/Build your own Arduino based Smart Vacuum Cleaner Robot for Automatic Floor Cleaning.png" alt="HW-201 IR Sensor" />
-                  </div>
-                  <div class="component-content">
-                    <p>
-                      <strong>🔍 What it does:</strong> Detects the <strong>presence of cars</strong> in individual parking slots to support the smart parking system.<br><br>
-              
-                      <strong>⚙️ How it works:</strong><br>
-                      - Outputs a <strong>digital signal (HIGH/LOW)</strong> to the ESP32.<br>
-                      - When a car is detected (<strong>HIGH</strong>), the ESP32:<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;• Turns the <strong>red LED ON</strong> to indicate the slot is occupied.<br>
-                      &nbsp;&nbsp;&nbsp;&nbsp;• Sends a <strong>real-time update to Firebase</strong>.
-                    </p>
-                  </div>
-                </div>
-              </section>
-              
-
-
-              <section class="how-it-works">
-                <!-- <h1>How it works?</h1> -->
-                <div class="nameofcom">
-                  <div class="divider"></div>
-                  <h2> Red & Green LEDs – Parking Slot Indicators</h2>  
-                  <div class="divider"></div>
-                </div>
-              
-                <div class="component">
-                  <div class="component-img">
-                    <img src="images/6.png" alt="Red and Green LEDs" />
-                  </div>
-                  <div class="component-content">
-                    <p>
-                      <strong>🔍 What they do:</strong> Visually indicate the <strong>status of parking slots</strong> (available or occupied).<br><br>
-              
-                      <strong>⚙️ How they work:</strong><br>
-                      - Connected to <strong>ESP32 digital pins</strong> (e.g., GPIO12 for red, GPIO13 for green).<br>
-                      - <strong>Green LED</strong> lights up when the slot is <strong>empty</strong>.<br>
-                      - <strong>Red LED</strong> lights up when the slot is <strong>occupied</strong>.
-                    </p>
-                  </div>
-                </div>
-              </section>
               
 
 </body>

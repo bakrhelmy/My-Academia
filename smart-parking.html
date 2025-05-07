@@ -3,567 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Academia - Project Components</title>
-    <style>
-        :root {
-            --primary-blue: #3498db;
-            --primary-dark: #2c3e50;
-            --accent-red: #e74c3c;
-            --accent-green: #2ecc71;
-            --light-bg: #f8f9fa;
-            --dark-text: #2c3e50;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--dark-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        #iot-network {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at center, #1a2a6c 0%, #0a0f25 100%);
-            overflow: hidden;
-        }
-        
-        .device-node {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-green);
-            box-shadow: 0 0 10px var(--accent-green);
-            transform: translate(-50%, -50%);
-        }
-        
-        .connection-line {
-            position: absolute;
-            height: 1px;
-            background: rgba(52, 152, 219, 0.3);
-            transform-origin: left center;
-        }
-        
-        .pulse-ring {
-            position: absolute;
-            border: 1px solid rgba(52, 152, 219, 0.6);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-        
-        .floating-icon {
-            position: absolute;
-            color: white;
-            font-size: 20px;
-            text-shadow: 0 0 8px currentColor;
-            transform: translate(-50%, -50%);
-        }
-        
-        header {
-            background: rgba(44, 62, 80, 0.85);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-            position: relative;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            position: relative;
-        }
-        
-        .content-card {
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 1.5rem;
-            padding: 0.6rem 1.2rem;
-            background: var(--primary-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .back-button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .section-title {
-            color: var(--primary-dark);
-            margin: 1.5rem 0;
-            font-size: 1.8rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
-            border-radius: 3px;
-        }
-        
-        .components-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.8rem;
-            margin-top: 2rem;
-        }
-        
-        .component-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .component-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .component-header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-            color: white;
-            padding: 1rem 1.5rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .component-header i {
-            font-size: 1.2rem;
-        }
-        
-        .component-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .component-body {
-            padding: 1.5rem;
-        }
-        
-        .component-description {
-            margin-bottom: 1rem;
-            color: #555;
-        }
-        
-        .how-it-works {
-            background: rgba(236, 240, 241, 0.6);
-            padding: 1rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-            border-left: 3px solid var(--primary-blue);
-        }
-        
-        .how-it-works h4 {
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .how-it-works ul {
-            padding-left: 1.2rem;
-        }
-        
-        .how-it-works li {
-            margin-bottom: 0.4rem;
-            position: relative;
-        }
-        
-        .how-it-works li::before {
-            content: '→';
-            position: absolute;
-            left: -1rem;
-            color: var(--primary-blue);
-        }
-        
-        footer {
-            background: rgba(44, 62, 80, 0.85);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .components-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>GR project</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">  
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/smart-parking.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div id="iot-network"></div>
-<!--     
-    <header>
-        <h1>My Academia - IoT Components</h1>
-        <p>Smart Academy System with Face Recognition and Automation</p>
-    </header> -->
-    
-    <div class="container">
-        <div class="content-card">
-            <a href="./index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i> Back to Dashboard
-            </a>
-            
-            <h2 class="section-title">Smart Hall Components</h2>
-            <p>The Smart Hall system integrates multiple IoT devices to create an automated, intelligent classroom environment with attendance tracking, environmental control, and safety monitoring.</p>
-            
-            <div class="components-grid">
-                <!-- ESP32-CAM -->
-                
-                
-                <!-- Environmental Sensors -->
-                <div class="component-card">
-                    <div class="component-header">
-                        <i class="fas fa-temperature-low"></i> Environmental Sensors
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sensors" class="component-image">
-                    <div class="component-body">
-                        <div class="component-description">
-                            <strong>Includes:</strong> DHT11 (Temp/Humidity), MQ-2 (Smoke), KY-026 (Flame)
+    <body>
+      <div class="home">
+
+      <header>
+        <div class="logo"><a><img src="images/Icon[1].png" alt=""></a></div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="./Project-components.html">Project components</a>
+          <a href="./technologies-used.html">Technologies Used</a>
+          <a href="about.html">About My Academia</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </header>
+      <section>
+            <div class="container">
+                <div class="front">
+
+                    <div class="discription">
+                        <div class="text">
+                            <h1>Technologies Powering My Academia</h1>
+                            <p>Discover the cutting-edge hardware and software technologies that make our smart academy system innovative and efficient.</p>
                         </div>
-                        <div class="how-it-works">
-                            <h4><i class="fas fa-project-diagram"></i> Integration</h4>
-                            <ul>
-                                <li>Continuous environmental monitoring</li>
-                                <li>Triggers alarms and notifications</li>
-                                <li>Data logged to Firebase for analytics</li>
-                                <li>Fan control based on temperature</li>
-                            </ul>
+                        <div class="butt">
+                             <!-- <button class="btn">Explore More</button> -->
                         </div>
                     </div>
-                </div>
-                
-                <!-- Actuators -->
-                <div class="component-card">
-                    <div class="component-header">
-                        <i class="fas fa-temperature-low"></i> Environmental Sensors
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sensors" class="component-image">
-                    <div class="component-body">
-                        <div class="component-description">
-                            <strong>Includes:</strong> DHT11 (Temp/Humidity), MQ-2 (Smoke), KY-026 (Flame)
-                        </div>
-                        <div class="how-it-works">
-                            <h4><i class="fas fa-project-diagram"></i> Integration</h4>
-                            <ul>
-                                <li>Continuous environmental monitoring</li>
-                                <li>Triggers alarms and notifications</li>
-                                <li>Data logged to Firebase for analytics</li>
-                                <li>Fan control based on temperature</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="component-card">
-                    <div class="component-header">
-                        <i class="fas fa-temperature-low"></i> Environmental Sensors
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sensors" class="component-image">
-                    <div class="component-body">
-                        <div class="component-description">
-                            <strong>Includes:</strong> DHT11 (Temp/Humidity), MQ-2 (Smoke), KY-026 (Flame)
-                        </div>
-                        <div class="how-it-works">
-                            <h4><i class="fas fa-project-diagram"></i> Integration</h4>
-                            <ul>
-                                <li>Continuous environmental monitoring</li>
-                                <li>Triggers alarms and notifications</li>
-                                <li>Data logged to Firebase for analytics</li>
-                                <li>Fan control based on temperature</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="component-card">
-                    <div class="component-header">
-                        <i class="fas fa-temperature-low"></i> Environmental Sensors
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sensors" class="component-image">
-                    <div class="component-body">
-                        <div class="component-description">
-                            <strong>Includes:</strong> DHT11 (Temp/Humidity), MQ-2 (Smoke), KY-026 (Flame)
-                        </div>
-                        <div class="how-it-works">
-                            <h4><i class="fas fa-project-diagram"></i> Integration</h4>
-                            <ul>
-                                <li>Continuous environmental monitoring</li>
-                                <li>Triggers alarms and notifications</li>
-                                <li>Data logged to Firebase for analytics</li>
-                                <li>Fan control based on temperature</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="component-card">
-                    <div class="component-header">
-                        <i class="fas fa-temperature-low"></i> Environmental Sensors
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sensors" class="component-image">
-                    <div class="component-body">
-                        <div class="component-description">
-                            <strong>Includes:</strong> DHT11 (Temp/Humidity), MQ-2 (Smoke), KY-026 (Flame)
-                        </div>
-                        <div class="how-it-works">
-                            <h4><i class="fas fa-project-diagram"></i> Integration</h4>
-                            <ul>
-                                <li>Continuous environmental monitoring</li>
-                                <li>Triggers alarms and notifications</li>
-                                <li>Data logged to Firebase for analytics</li>
-                                <li>Fan control based on temperature</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="component-card">
-                    <div class="component-header">
-                        <i class="fas fa-temperature-low"></i> Environmental Sensors
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sensors" class="component-image">
-                    <div class="component-body">
-                        <div class="component-description">
-                            <strong>Includes:</strong> DHT11 (Temp/Humidity), MQ-2 (Smoke), KY-026 (Flame)
-                        </div>
-                        <div class="how-it-works">
-                            <h4><i class="fas fa-project-diagram"></i> Integration</h4>
-                            <ul>
-                                <li>Continuous environmental monitoring</li>
-                                <li>Triggers alarms and notifications</li>
-                                <li>Data logged to Firebase for analytics</li>
-                                <li>Fan control based on temperature</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- <div class="imgg">
+                        <img src="./images/Blog post-amico.png" alt="">
+                    </div> -->
                 </div>
             </div>
         </div>
-    </div>
-    
-    <footer>
-        <p>My Academia - IoT Smart Academy System</p>
-        <p>© 2023 Graduation Project | Computer Engineering</p>
-    </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const network = document.getElementById('iot-network');
-            const deviceIcons = ['microchip', 'camera', 'temperature-low', 'fan', 'lightbulb', 'fire', 'smog', 'robot'];
-            const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f1c40f', '#9b59b6'];
+      </section>
+        </div>
+      
+      <section class="conn">
+        <section class="how-it-works">
+          <!-- <h1>How it works?</h1> -->
+          <div class="nameofcom">
+            <div class="divider"></div>
+            <h2>HW-201 IR Sensor – Smart Parking Detection</h2>  
+            <div class="divider"></div>
+          </div>
+        
+          <div class="component">
+            <div class="component-img">
+              <img src="images/Build your own Arduino based Smart Vacuum Cleaner Robot for Automatic Floor Cleaning.png" alt="HW-201 IR Sensor" />
+            </div>
+            <div class="component-content">
+              <p>
+                <strong>🔍 What it does:</strong> Detects the <strong>presence of cars</strong> in individual parking slots to support the smart parking system.<br><br>
+        
+                <strong>⚙️ How it works:</strong><br>
+                - Outputs a <strong>digital signal (HIGH/LOW)</strong> to the ESP32.<br>
+                - When a car is detected (<strong>HIGH</strong>), the ESP32:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Turns the <strong>red LED ON</strong> to indicate the slot is occupied.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;• Sends a <strong>real-time update to Firebase</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+  
+  
+        <section class="how-it-works">
+          <!-- <h1>How it works?</h1> -->
+          <div class="nameofcom">
+            <div class="divider"></div>
+            <h2> Red & Green LEDs – Parking Slot Indicators</h2>  
+            <div class="divider"></div>
+          </div>
+        
+          <div class="component">
+            <div class="component-img">
+              <img src="images/6.png" alt="Red and Green LEDs" />
+            </div>
+            <div class="component-content">
+              <p>
+                <strong>🔍 What they do:</strong> Visually indicate the <strong>status of parking slots</strong> (available or occupied).<br><br>
+        
+                <strong>⚙️ How they work:</strong><br>
+                - Connected to <strong>ESP32 digital pins</strong> (e.g., GPIO12 for red, GPIO13 for green).<br>
+                - <strong>Green LED</strong> lights up when the slot is <strong>empty</strong>.<br>
+                - <strong>Red LED</strong> lights up when the slot is <strong>occupied</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
             
-            // Create device nodes
-            const nodes = [];
-            const nodeCount = 15;
-            
-            for (let i = 0; i < nodeCount; i++) {
-                createDeviceNode(i);
-            }
-            
-            // Create connections between nodes
-            createConnections();
-            
-            // Create pulse animations
-            setInterval(createPulse, 2000);
-            
-            // Create floating icons
-            for (let i = 0; i < 8; i++) {
-                createFloatingIcon(i);
-            }
-            
-            function createDeviceNode(index) {
-                const node = document.createElement('div');
-                node.className = 'device-node';
-                
-                const size = 8 + Math.random() * 8;
-                const posX = Math.random() * window.innerWidth;
-                const posY = Math.random() * window.innerHeight;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                node.style.width = `${size}px`;
-                node.style.height = `${size}px`;
-                node.style.left = `${posX}px`;
-                node.style.top = `${posY}px`;
-                node.style.background = color;
-                node.style.boxShadow = `0 0 10px ${color}`;
-                
-                // Store position for connections
-                nodes.push({
-                    element: node,
-                    x: posX,
-                    y: posY,
-                    color: color
-                });
-                
-                network.appendChild(node);
-            }
-            
-            function createConnections() {
-                // Connect each node to 2-3 others
-                nodes.forEach((node, i) => {
-                    const connectionCount = 2 + Math.floor(Math.random() * 2);
-                    const connectedIndices = [];
-                    
-                    for (let j = 0; j < connectionCount; j++) {
-                        let targetIndex;
-                        do {
-                            targetIndex = Math.floor(Math.random() * nodes.length);
-                        } while (targetIndex === i || connectedIndices.includes(targetIndex));
-                        
-                        connectedIndices.push(targetIndex);
-                        const targetNode = nodes[targetIndex];
-                        
-                        createConnectionLine(node, targetNode);
-                    }
-                });
-            }
-            
-            function createConnectionLine(source, target) {
-                const line = document.createElement('div');
-                line.className = 'connection-line';
-                
-                const dx = target.x - source.x;
-                const dy = target.y - source.y;
-                const length = Math.sqrt(dx * dx + dy * dy);
-                const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-                
-                line.style.width = `${length}px`;
-                line.style.left = `${source.x}px`;
-                line.style.top = `${source.y}px`;
-                line.style.transform = `rotate(${angle}deg)`;
-                line.style.opacity = 0.2 + Math.random() * 0.3;
-                
-                // Animate the line
-                line.style.animation = `pulse ${3 + Math.random() * 4}s infinite ease-in-out`;
-                
-                network.appendChild(line);
-            }
-            
-            function createPulse() {
-                const activeNode = nodes[Math.floor(Math.random() * nodes.length)];
-                
-                const ring = document.createElement('div');
-                ring.className = 'pulse-ring';
-                ring.style.left = `${activeNode.x}px`;
-                ring.style.top = `${activeNode.y}px`;
-                ring.style.borderColor = activeNode.color;
-                
-                network.appendChild(ring);
-                
-                // Animation
-                let size = 5;
-                const growInterval = setInterval(() => {
-                    size += 3;
-                    ring.style.width = `${size}px`;
-                    ring.style.height = `${size}px`;
-                    ring.style.opacity = 1 - size/150;
-                    
-                    if (size > 150) {
-                        clearInterval(growInterval);
-                        ring.remove();
-                    }
-                }, 20);
-            }
-            
-            function createFloatingIcon(index) {
-                const icon = document.createElement('div');
-                icon.className = 'floating-icon';
-                icon.innerHTML = `<i class="fas fa-${deviceIcons[index]}"></i>`;
-                
-                const posX = 50 + Math.random() * (window.innerWidth - 100);
-                const posY = 50 + Math.random() * (window.innerHeight - 100);
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                
-                icon.style.left = `${posX}px`;
-                icon.style.top = `${posY}px`;
-                icon.style.color = color;
-                
-                // Animation
-                const duration = 15 + Math.random() * 15;
-                const delay = Math.random() * 5;
-                icon.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
-                
-                network.appendChild(icon);
-            }
-            
-            // Add animation styles dynamically
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes float {
-                    0%, 100% { transform: translate(-50%, -50%) translate(0, 0); }
-                    25% { transform: translate(-50%, -50%) translate(5px, 10px); }
-                    50% { transform: translate(-50%, -50%) translate(10px, 5px); }
-                    75% { transform: translate(-50%, -50%) translate(5px, -5px); }
-                }
-                
-                @keyframes pulse {
-                    0%, 100% { opacity: 0.3; }
-                    50% { opacity: 0.7; }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Make nodes interactive
-            const nodeElements = document.querySelectorAll('.device-node');
-            nodeElements.forEach(node => {
-                node.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                });
-                
-                node.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translate(-50%, -50%) scale(1)';
-                });
-            });
-        });
-    </script>
+              
+
 </body>
+  </body>
 </html>

@@ -12,218 +12,174 @@
 </head>
 <body>
     <body>
-      <header>
-        <div class="logo"><a><img src="images/Icon[1].png" alt=""></a></div>
-        <nav>
+      <div class="home">
+
+        <header>
+          <div class="logo"><a><img src="images/Icon[1].png" alt=""></a></div>
+          <nav>
             <a href="index.html">Home</a>
             <a href="./Project-components.html">Project components</a>
-                <a href="./technologies-used.html">Technologies Used</a>
-          <a href="#">About My Academia</a>
-          <a href="#">Contact Us</a>
-        </nav>
-      </header>
-      <section>
-        <div class="home">
-            <div class="container">
-                <div class="front">
+            <a href="./technologies-used.html">Technologies Used</a>
+            <a href="about.html">About My Academia</a>
+            <a href="contact.html">Contact Us</a>
+          </nav>
+        </header>
+        <section>
+              <div class="container">
+                  <div class="front">
+  
+                      <div class="discription">
+                          <div class="text">
+                              <h1>Technologies Powering My Academia</h1>
+                              <p>Discover the cutting-edge hardware and software technologies that make our smart academy system innovative and efficient.</p>
+                          </div>
+                          <div class="butt">
+                               <!-- <button class="btn">Explore More</button> -->
+                          </div>
+                      </div>
+                      <!-- <div class="imgg">
+                          <img src="./images/Blog post-amico.png" alt="">
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+        </section>
+          </div>
 
-                    <div class="discription">
-                        <div class="text">
-                            <h1>Technologies Powering My Academia</h1>
-                            <p>Discover the cutting-edge hardware and software technologies that make our smart academy system innovative and efficient.</p>
-                        </div>
-                        <div class="butt">
-                             <!-- <button class="btn">Explore More</button> -->
-                        </div>
-                    </div>
-                    <div class="imgg">
-                        <img src="./images/Blog post-amico.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
+<section class="conn">
+
+  <section class="how-it-works">
+    <!-- <h1>How it works?</h1> -->
+    <div class="nameofcom">
+      <div class="divider"></div>
+      <h2>FC-28 Soil Moisture Sensor</h2>  
+      <div class="divider"></div>
+    </div>
+  
+    <div class="component">
+      <div class="component-img">
+        <img src="images/Soil Hygrometer Detection Module Moisture Sensor Fc-28 DC 3_3v-5v, White.png" alt="FC-28 Soil Moisture Sensor" />
+      </div>
+      <div class="component-content">
+        <p>
+          <strong>🔍 What it does:</strong> Monitors <strong>soil moisture levels</strong> using electrical conductivity, ensuring the soil stays adequately watered.<br><br>
+  
+          <strong>⚙️ How it works:</strong><br>
+          - Produces an <strong>analog voltage</strong> (0–3.3V) based on moisture level.<br>
+          - Connected to an <strong>ESP32 analog pin</strong> (ADC).<br>
+          - When moisture drops <strong>below a predefined threshold</strong>, the ESP32 <strong>automatically activates the water pump</strong> to irrigate the garden.
+        </p>
+      </div>
+    </div>
+  </section>
+  
 
 
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2>FC-28 Soil Moisture Sensor – Garden Irrigation Trigger</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/Soil Hygrometer Detection Module Moisture Sensor Fc-28 DC 3_3v-5v, White.png" alt="FC-28 Soil Moisture Sensor" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What it does:</strong> Monitors <strong>soil moisture levels</strong> using electrical conductivity, ensuring the soil stays adequately watered.<br><br>
-      
-              <strong>⚙️ How it works:</strong><br>
-              - Produces an <strong>analog voltage</strong> (0–3.3V) based on moisture level.<br>
-              - Connected to an <strong>ESP32 analog pin</strong> (ADC).<br>
-              - When moisture drops <strong>below a predefined threshold</strong>, the ESP32 <strong>automatically activates the water pump</strong> to irrigate the garden.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-
-
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2>R385 DC6-12V Water Pump – Automated Garden Irrigation</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/Dc 12v Motor Electric Tea Pot Mini Gear Water Pump For 7_5mm.png" alt="R385 DC Water Pump" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What it does:</strong> Supplies water to the garden automatically when soil moisture is low.<br><br>
-      
-              <strong>⚙️ How it works:</strong><br>
-              - Operated through a <strong>5V or 12V relay module</strong>, since the <strong>ESP32 can’t directly drive high-voltage loads</strong>.<br>
-              - The <strong>relay is triggered via a digital pin (GPIO23)</strong> on the ESP32.<br>
-              - Once activated, the pump delivers water as needed based on real-time soil readings.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2>5V/12V/24V Relay Module – High-Voltage Device Control</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/4 Channel 5V Relay Module - Wiki.png" alt="Relay Module" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What it does:</strong> Controls high-power devices like pumps and fans by using low-voltage signals from the ESP32.<br><br>
-      
-              <strong>⚙️ How it works:</strong><br>
-              - The <strong>ESP32 sends a 3.3V signal</strong> to the relay's control pin.<br>
-              - The <strong>relay acts as a switch</strong>, allowing high-voltage devices to be turned ON or OFF safely.<br>
-              - Ensures isolation between the microcontroller and high-power circuits.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2>DHT11 Sensor – Temperature & Humidity Monitor</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/Arduino Dht11 Dht-11.png" alt="DHT11 Sensor" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What it does:</strong> Measures environmental temperature and humidity levels in real time.<br><br>
-      
-              <strong>⚙️ How it works:</strong><br>
-              - Communicates with the ESP32 through a <strong>digital pin (GPIO18)</strong>.<br>
-              - When the <strong>temperature exceeds a set threshold</strong>, the ESP32 activates the <strong>12V cooling fan</strong> using a relay.<br>
-              - Enables smart climate control for the system.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2> 12V Fan – Smart Garden Cooling System</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/DC 5010 5V_12V_24V Computer CPU Kühler Mini Lüfter 50MM Kleiner Abluftventilator für 3D-Drucker 2.png" alt="12V Fan" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What it does:</strong> Provides automatic cooling for the garden area to maintain optimal environmental conditions.<br><br>
-      
-              <strong>⚙️ How it works:</strong><br>
-              - Operated through a <strong>relay module</strong>, similar to the water pump.<br>
-              - The <strong>ESP32</strong> activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
-              - Helps protect plants from heat stress in hot weather.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2>HW-201 IR Sensor – Smart Parking Detection</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/Build your own Arduino based Smart Vacuum Cleaner Robot for Automatic Floor Cleaning.png" alt="HW-201 IR Sensor" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What it does:</strong> Detects the <strong>presence of cars</strong> in individual parking slots to support the smart parking system.<br><br>
-      
-              <strong>⚙️ How it works:</strong><br>
-              - Outputs a <strong>digital signal (HIGH/LOW)</strong> to the ESP32.<br>
-              - When a car is detected (<strong>HIGH</strong>), the ESP32:<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;• Turns the <strong>red LED ON</strong> to indicate the slot is occupied.<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;• Sends a <strong>real-time update to Firebase</strong>.
-            </p>
-          </div>
-        </div>
-      </section>
+  <section class="how-it-works">
+    <!-- <h1>How it works?</h1> -->
+    <div class="nameofcom">
+      <div class="divider"></div>
+      <h2>R385 DC6-12V Water Pump </h2>  
+      <div class="divider"></div>
+    </div>
+  
+    <div class="component">
+      <div class="component-img">
+        <img src="images/Dc 12v Motor Electric Tea Pot Mini Gear Water Pump For 7_5mm.png" alt="R385 DC Water Pump" />
+      </div>
+      <div class="component-content">
+        <p>
+          <strong>🔍 What it does:</strong> Supplies water to the garden automatically when soil moisture is low.<br><br>
+  
+          <strong>⚙️ How it works:</strong><br>
+          - Operated through a <strong>5V or 12V relay module</strong>, since the <strong>ESP32 can’t directly drive high-voltage loads</strong>.<br>
+          - The <strong>relay is triggered via a digital pin (GPIO23)</strong> on the ESP32.<br>
+          - Once activated, the pump delivers water as needed based on real-time soil readings.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="how-it-works">
+    <!-- <h1>How it works?</h1> -->
+    <div class="nameofcom">
+      <div class="divider"></div>
+      <h2>5V/12V/24V Relay Module – High-Voltage Device Control</h2>  
+      <div class="divider"></div>
+    </div>
+  
+    <div class="component">
+      <div class="component-img">
+        <img src="images/4 Channel 5V Relay Module - Wiki.png" alt="Relay Module" />
+      </div>
+      <div class="component-content">
+        <p>
+          <strong>🔍 What it does:</strong> Controls high-power devices like pumps and fans by using low-voltage signals from the ESP32.<br><br>
+  
+          <strong>⚙️ How it works:</strong><br>
+          - The <strong>ESP32 sends a 3.3V signal</strong> to the relay's control pin.<br>
+          - The <strong>relay acts as a switch</strong>, allowing high-voltage devices to be turned ON or OFF safely.<br>
+          - Ensures isolation between the microcontroller and high-power circuits.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="how-it-works">
+    <!-- <h1>How it works?</h1> -->
+    <div class="nameofcom">
+      <div class="divider"></div>
+      <h2>DHT11 Sensor – Temperature & Humidity Monitor</h2>  
+      <div class="divider"></div>
+    </div>
+  
+    <div class="component">
+      <div class="component-img">
+        <img src="images/Arduino Dht11 Dht-11.png" alt="DHT11 Sensor" />
+      </div>
+      <div class="component-content">
+        <p>
+          <strong>🔍 What it does:</strong> Measures environmental temperature and humidity levels in real time.<br><br>
+  
+          <strong>⚙️ How it works:</strong><br>
+          - Communicates with the ESP32 through a <strong>digital pin (GPIO18)</strong>.<br>
+          - When the <strong>temperature exceeds a set threshold</strong>, the ESP32 activates the <strong>12V cooling fan</strong> using a relay.<br>
+          - Enables smart climate control for the system.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="how-it-works">
+    <!-- <h1>How it works?</h1> -->
+    <div class="nameofcom">
+      <div class="divider"></div>
+      <h2> 12V Fan </h2>  
+      <div class="divider"></div>
+    </div>
+  
+    <div class="component">
+      <div class="component-img">
+        <img src="images/DC 5010 5V_12V_24V Computer CPU Kühler Mini Lüfter 50MM Kleiner Abluftventilator für 3D-Drucker 2.png" alt="12V Fan" />
+      </div>
+      <div class="component-content">
+        <p>
+          <strong>🔍 What it does:</strong> Provides automatic cooling for the garden area to maintain optimal environmental conditions.<br><br>
+  
+          <strong>⚙️ How it works:</strong><br>
+          - Operated through a <strong>relay module</strong>, similar to the water pump.<br>
+          - The <strong>ESP32</strong> activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
+          - Helps protect plants from heat stress in hot weather.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+</section>
       
 
 
-      <section class="how-it-works">
-        <!-- <h1>How it works?</h1> -->
-        <div class="nameofcom">
-          <div class="divider"></div>
-          <h2> Red & Green LEDs – Parking Slot Indicators</h2>  
-          <div class="divider"></div>
-        </div>
-      
-        <div class="component">
-          <div class="component-img">
-            <img src="images/6.png" alt="Red and Green LEDs" />
-          </div>
-          <div class="component-content">
-            <p>
-              <strong>🔍 What they do:</strong> Visually indicate the <strong>status of parking slots</strong> (available or occupied).<br><br>
-      
-              <strong>⚙️ How they work:</strong><br>
-              - Connected to <strong>ESP32 digital pins</strong> (e.g., GPIO12 for red, GPIO13 for green).<br>
-              - <strong>Green LED</strong> lights up when the slot is <strong>empty</strong>.<br>
-              - <strong>Red LED</strong> lights up when the slot is <strong>occupied</strong>.
-            </p>
-          </div>
-        </div>
-      </section>
+   
 </body>
   </body>
 </html>
