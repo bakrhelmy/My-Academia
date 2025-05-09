@@ -29,7 +29,51 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .hero {
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 60px;
+}
+.home {    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+
+    /* background-image: url("https://i.postimg.cc/h4bDHm5P/close-up-hardware-component-background.jpg"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: for parallax effect */
+    height: 70vh; /* Changed from 86vh to full viewport height */
+    padding: 5px 0 10px 0;
+    position: relative;
+}
+.logo {
+font-weight: 700;
+font-size: 1.5rem;
+color: white;
+}
+.logo img {
+    width: 80%;
+}
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-weight: 500;
+}
+    /* 
+    .home {
+    height: 86vh;
+    padding: 5px 0 10px 0;
+    } */
+
+.front {
+    text-align: center;
+    color: white;
+margin-top: 150px;
+
+}
+
+        /* .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             height: 60vh;
             color: white;
@@ -51,8 +95,21 @@
             font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 1rem;
+        } */
+        .section {
+            padding: 5rem 0;
         }
         
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
         .team-card {
             background-color: white;
             border-radius: 10px;
@@ -146,15 +203,46 @@
 </head>
 <body>
     <!-- Navigation -->
-    
+    <div class="home">
+
+        <header>
+          <div class="logo"><a><img src="images/Icon[1].png" alt=""></a></div>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="./Project-components.html">Project components</a>
+            <a href="./technologies-used.html">Technologies Used</a>
+            <a href="about.html">About My Academia</a>
+            <a href="contact.html">Contact Us</a>
+          </nav>
+        </header>
+        <section>
+              <div class="container">
+                  <div class="front">
+  
+                      <div class="discription">
+                          <div class="text">
+                            <h1 class="display-4 fw-bold mb-4">Contact us</h1>
+
+                        </div>
+                          <div class="butt">
+                               <!-- <button class="btn">Explore More</button> -->
+                          </div>
+                      </div>
+                      <!-- <div class="imgg">
+                          <img src="./images/Blog post-amico.png" alt="">
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+        </section>
+          </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <!-- <section class="hero">
         <div class="container">
             <h1 class="display-4 fw-bold mb-4">Contact us</h1>
-            <!-- <p class="lead mb-5">The brilliant minds behind My Academia's smart campus solutions</p> -->
         </div>
-    </section>
+    </section> -->
 
    
 
