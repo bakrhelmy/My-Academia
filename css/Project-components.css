@@ -41,7 +41,9 @@ font-weight: 700;
 font-size: 1.5rem;
 color: white;
 }
-
+.logo img {
+    width: 80%;
+}
 nav a {
 color: white;
 text-decoration: none;
