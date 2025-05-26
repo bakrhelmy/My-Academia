@@ -28,17 +28,27 @@ header {
 }
 .logo img {
     width: 80%;
-}
-.home {    background: linear-gradient(rgba(0, 0, 0, 0.363), rgba(0, 0, 0, 0.486)), url('https://i.postimg.cc/YCN5F4p9/9043555.jpgx') no-repeat center center/cover;
-
-    /* background-image: url("https://i.postimg.cc/h4bDHm5P/close-up-hardware-component-background.jpg"); */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed; /* Optional: for parallax effect */
-    height: 100vh; /* Changed from 86vh to full viewport height */
-    padding: 5px 0 10px 0;
+}.home {
     position: relative;
+    height: 100vh;
+    padding: 5px 0 10px 0;
+    overflow: hidden;
+}
+
+#bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Make sure content stays above video */
+header, section {
+    position: relative;
+    z-index: 1;
 }
 .logo {
     font-weight: 700;
