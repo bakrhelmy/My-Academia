@@ -3,313 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Academia - Smart Hall</title>
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        
-        .back-button {
-            display: inline-block;
-            margin-bottom: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        .back-button:hover {
-            background-color: #2980b9;
-        }
-        
-        .section-title {
-            color: var(--secondary-color);
-            margin: 2rem 0 1rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-        }
-        
-        .components-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .component-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .component-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .component-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            font-weight: bold;
-        }
-        
-        .component-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .component-body {
-            padding: 1.5rem;
-        }
-        
-        .component-description {
-            margin-bottom: 1rem;
-        }
-        
-        .how-it-works {
-            background-color: var(--light-color);
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-        }
-        
-        .how-it-works h4 {
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .how-it-works ul {
-            padding-left: 1.5rem;
-        }
-        
-        .how-it-works li {
-            margin-bottom: 0.3rem;
-        }
-        
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .components-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>My Academia - Flutter App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+       <link rel="stylesheet" href="./style2.css">
+
 </head>
 <body>
-    <header>
-        <h1>My Academia - Smart Hall System</h1>
-    </header>
-    
-    <div class="container">
-        <a href="./Project-components.html" class="back-button">← Back to Components</a>
-        
-        <h2 class="section-title">Smart Hall Components</h2>
-        <p>The Smart Hall system automates lecture hall operations including attendance tracking, environmental control, and safety features.</p>
-        
-        <div class="components-grid">
-            <!-- 12V LED Strip -->
-            <div class="component-card">
-                <div class="component-header">12V LED Strip</div>
-                <img src="https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="LED Strip" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Provides lighting in the hall.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>How it works:</h4>
-                        <ul>
-                            <li>Activated by a relay when motion is detected (via IR sensors)</li>
-                            <li>Can also be triggered when the lecturer enters</li>
-                            <li>Controlled by ESP32-CAM based on hall occupancy</li>
-                        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Academia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#screens">Screens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tech">Tech Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">Download</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">My Academia Mobile App</h1>
+            <p class="lead mb-5">Smart campus management at your fingertips</p>
+            <a href="#download" class="btn btn-primary btn-lg px-4">Download Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>App Features</h2>
+                <p class="lead">Comprehensive campus management in one powerful application</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Home Screen</h3>
+                        <p>The central hub providing quick access to all campus features including buildings, garage, garden, and attendance tracking.</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- DC Motor (Curtain Control) -->
-            <div class="component-card">
-                <div class="component-header">DC Motor (Curtain Control)</div>
-                <img src="https://images.unsplash.com/photo-1581094794329-c8119ae9c8b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="DC Motor" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Opens/closes curtains automatically.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>How it works:</h4>
-                        <ul>
-                            <li>Requires an H-bridge or motor driver (e.g., L298N) to control direction</li>
-                            <li>ESP32-CAM sends signals to the motor driver based on lecturer detection</li>
-                            <li>Automatically closes when lecture ends or opens when lecturer arrives</li>
-                        </ul>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Hall Control</h3>
+                        <p>Select buildings and halls, then control lights, fans, and projectors with live streaming capabilities for each hall.</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- KY-026 Flame Sensor -->
-            <div class="component-card">
-                <div class="component-header">KY-026 Flame Sensor</div>
-                <img src="https://images.unsplash.com/photo-1558383410-6b6a0b0b0b0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Flame Sensor" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Detects fire via infrared (IR) light.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>How it works:</h4>
-                        <ul>
-                            <li>Outputs a digital signal when flames are detected</li>
-                            <li>Connected to an ESP32-CAM digital pin (e.g., GPIO2)</li>
-                            <li>Triggers emergency protocol when fire is detected</li>
-                        </ul>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Parking Management</h3>
+                        <p>Real-time monitoring of parking spaces with infrared sensors showing available (green) and occupied (red) spots.</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Smoke Sensor (MQ-2) -->
-            <div class="component-card">
-                <div class="component-header">Smoke Sensor (MQ-2)</div>
-                <img src="https://images.unsplash.com/photo-1558383410-6b6a0b0b0b0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Smoke Sensor" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Detects smoke/gas.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>How it works:</h4>
-                        <ul>
-                            <li>Outputs an analog voltage proportional to smoke concentration</li>
-                            <li>Connected to an ESP32-CAM analog pin (ADC)</li>
-                            <li>Works in conjunction with flame sensor for comprehensive safety</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Buzzer -->
-            <div class="component-card">
-                <div class="component-header">Buzzer</div>
-                <img src="https://images.unsplash.com/photo-1558383410-6b6a0b0b0b0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Buzzer" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Alarms during fire/smoke emergencies.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>How it works:</h4>
-                        <ul>
-                            <li>Activated by ESP32-CAM via a digital pin (GPIO4)</li>
-                            <li>Triggers when either flame or smoke sensor detects danger</li>
-                            <li>Provides audible alert to evacuate the hall</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ESP32-CAM -->
-            <div class="component-card">
-                <div class="component-header">ESP32-CAM</div>
-                <img src="https://images.unsplash.com/photo-1558383410-6b6a0b0b0b0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="ESP32-CAM" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Central controller for the hall with face recognition capabilities.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>How it works:</h4>
-                        <ul>
-                            <li>Face recognition for attendance using its built-in camera</li>
-                            <li>Processes sensor data and controls relays</li>
-                            <li>Runs a TensorFlow Lite model for face detection</li>
-                            <li>Sends attendance logs to Firebase via Wi-Fi</li>
-                            <li>Uses microSD card to store attendance logs temporarily if Wi-Fi is unstable</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ESP32 Module -->
-            <div class="component-card">
-                <div class="component-header">ESP32 Module</div>
-                <img src="https://images.unsplash.com/photo-1558383410-6b6a0b0b0b0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="ESP32 Module" class="component-image">
-                <div class="component-body">
-                    <div class="component-description">
-                        <strong>What it does:</strong> Central processing and communication hub.
-                    </div>
-                    <div class="how-it-works">
-                        <h4>Key Functions:</h4>
-                        <ul>
-                            <li><strong>Sensor Interfacing:</strong> Connects to analog/digital sensors</li>
-                            <li><strong>Data Processing:</strong> Analyzes sensor data to trigger automated actions</li>
-                            <li><strong>Wireless Communication:</strong> Transmits data to Firebase and receives commands</li>
-                            <li><strong>Actuator Control:</strong> Drives high-power devices via relays</li>
-                            <li><strong>Power Management:</strong> Optimizes energy consumption</li>
-                        </ul>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Garden Automation</h3>
+                        <p>Monitor temperature and humidity with automatic fan control. Soil moisture sensors trigger water pumps when needed.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <footer>
-        <p>My Academia - Graduation Project</p>
-        <p>© 2023 IoT Smart Academy System</p>
+    </section>
+
+    <!-- Screens Section -->
+    <section id="screens" class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>App Screens</h2>
+                <p class="lead">Explore our intuitive user interface</p>
+            </div>
+            
+            <!-- Home Screen -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="screen-card animate-on-scroll">
+                        <div class="screen-img">
+                            <img src="https://via.placeholder.com/300x500?text=Home+Screen" alt="Home Screen">
+                        </div>
+                        <div class="screen-info">
+                            <h4>Home Screen</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Home Screen</h3>
+                    <p>It serves as the starting point from which users can access the application's main features, content, and navigation options, such as going to the buildings page, the garage page, the garden page, or the attendance page.</p>
+                </div>
+            </div>
+            
+            <!-- Login/Signup Screens -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="screen-card animate-on-scroll">
+                        <div class="screen-img">
+                            <img src="https://via.placeholder.com/300x500?text=Login/Signup" alt="Login/Signup Screen">
+                        </div>
+                        <div class="screen-info">
+                            <h4>Login & Signup</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3>Login & Signup Screens</h3>
+                    <p>The user first selects either sign up or login to verify the user's identity. The login screen allows users to access their existing accounts, while the sign up screen allows new users to create accounts to use the app.</p>
+                </div>
+            </div>
+            
+            <!-- Hall Screens -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="screen-card animate-on-scroll">
+                        <div class="screen-img">
+                            <img src="./images/Two-screens-Garden.png" alt="Hall Screen">
+                        </div>
+                        <div class="screen-info">
+                            <h4>Hall Control</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Hall Screens</h3>
+                    <p>Here, we start by choosing the building from building A, building B, etc, and then we choose the hall we are in from Hall A, Hall B, etc. Also, after choosing the hall, I can control everything there from lights, fans, or projectors, and I can open a live stream for the entire hall.</p>
+                </div>
+            </div>
+            
+            <!-- Parking Screens -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="screen-card animate-on-scroll">
+                        <div class="screen-img">
+                            <img src="./images/Two-screens-Garden.png" alt="Hall Screen">
+                        </div>
+                        <div class="screen-info">
+                            <h4>Parking Management</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3>Parking Screens</h3>
+                    <p>On the parking screen, we display empty or full spaces. We have an infrared sensor to detect any car present. As long as the space is empty, the green light is on, and if a car has parked, the red light is on.</p>
+                </div>
+            </div>
+            
+            <!-- Garden Screens -->
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="screen-card animate-on-scroll">
+                        <div class="screen-img">
+                            <img src="Two-screens-Garden.png" alt="Garden Screen">
+                        </div>
+                        <div class="screen-info">
+                            <h4>Garden Automation</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Garden Screens</h3>
+                    <p>On the garden screen, we display the temperature and humidity, and if the temperature is high, we turn on the fan, and we can control it. There is also a soil moisture sensor to measure the water in the soil. If the soil has good water content, we do not turn on the water pump, and if the soil is dry, we make the water pump work automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="section tech-stack">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technology Stack</h2>
+                <p class="lead">Powering our mobile application</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fab fa-flutter"></i>
+                        </div>
+                        <h4>Flutter</h4>
+                        <p>Cross-platform framework</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fab fa-dart"></i>
+                        </div>
+                        <h4>Dart</h4>
+                        <p>Programming language</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h4>Firebase</h4>
+                        <p>Backend services</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Firestore</h4>
+                        <p>Real-time database</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Firebase Auth</h4>
+                        <p>User authentication</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>API Integration</h4>
+                        <p>Hardware communication</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive UI</h4>
+                        <p>Adapts to all devices</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Fast Performance</h4>
+                        <p>Optimized experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section">
+        <div class="container">
+            <div class="download-section animate-on-scroll">
+                <h2 class="display-5 mb-4">Download My Academia App</h2>
+                <p class="lead mb-5">Available now on both iOS and Android platforms</p>
+                <div class="mb-4">
+                    <a href="#" class="download-btn">
+                        <i class="fab fa-apple me-2"></i> App Store
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fab fa-google-play me-2"></i> Google Play
+                    </a>
+                </div>
+                <p>Scan the QR code to download</p>
+                <img src="https://via.placeholder.com/150?text=QR+Code" alt="QR Code" class="img-fluid mt-3" style="max-width: 150px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 My Academia. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // You can add interactive functionality here
-        document.addEventListener('DOMContentLoaded', function() {
-            // Example: Add click effect to cards
-            const cards = document.querySelectorAll('.component-card');
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.classList.toggle('active');
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate-in');
+                }
+            });
+        }
+        
+        // Run on page load
+        window.addEventListener('load', animateOnScroll);
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-            
-            // You could add more interactive features like:
-            // - Filtering components
-            // - Expanding/collapsing descriptions
-            // - Real-time status updates if connected to your Firebase
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(44, 62, 80, 0.9)';
+                navbar.style.padding = '0.5rem 0';
+            } else {
+                navbar.style.backgroundColor = 'var(--secondary)';
+                navbar.style.padding = '1rem 0';
+            }
         });
     </script>
 </body>

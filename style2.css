@@ -1,105 +1,158 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #111;
-    color: #ccc;
-  }
-  
-  .how-it-works {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 20px;
-    border-radius: 16px;
-    background-color: #181818;
-  }
-  
-  .how-it-works h1 {
-    text-align: center;
-    padding: 0 33px;
-    color: #888bff;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
-  
-  .intro {
-    width: 60%;
-    font-size: 1.1em;
-    margin-bottom: 40px;
-    color: #aaa;
-  }
-  
-  .component {
-    padding-left: 40px;
-
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    /* gap: 30px; */
-    align-items: center;
-    /* margin-bottom: 40px; */
-  }
-  
-  .component-img {
-    flex: 1 1 250px;
-    text-align: center;
-  }
-  
-  .component-img img { 
-    padding: 20px;
-    max-width: 200px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  }
-  
-  .component-content {
-    flex: 2 1 400px;
-  }
-  
-  .component-content h2 {
-    color: #888bff;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .component-content p {
-    line-height: 1.6em;
-    font-size: 1.1em;
-    color: #ccc;
-  }
-  
-  .divider { 
-    width: 30%;
-    height: 3px;
-    background: #888bff;
-    margin: 60px 0 50px 0;
-    
-    opacity: 0.4;
-    /* color: #888bff; */
-  }
-  
-  /* Responsive tweaks */
-  @media (max-width: 768px) {
-    .component {
-      flex-direction: column;
-      text-align: center;
-    }
-    .component-content {
-      text-align: left;
-    }
-  }
-  .nameofcom{
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-  }
-  .nameofcom h2
-  {
-    color: #888bff;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    text-align: center; padding: 0 10px ;
-  }
-
-
-
-  
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .navbar {
+            background-color: var(--secondary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .screen-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .screen-card {
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .screen-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .screen-img {
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .screen-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .screen-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .tech-stack {
+            background-color: var(--light);
+        }
+        
+        .tech-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .tech-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .download-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            border-radius: 10px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+   
