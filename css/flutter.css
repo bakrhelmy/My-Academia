@@ -10,7 +10,10 @@
     --warning: #ffc107;
     --info: #17a2b8;
 }
-
+img{
+    width: 85%;
+    /* height: auto; */
+}
 /* Base Styles */
 body {
     font-family: 'Rubik', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
