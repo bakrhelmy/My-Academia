@@ -67,7 +67,7 @@ p {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.281)), 
                 url('https://i.postimg.cc/RCgJLCG6/4rr43r34r.png') 
                 no-repeat center center/cover;
     background-attachment: fixed;
