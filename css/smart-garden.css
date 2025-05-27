@@ -5,7 +5,54 @@ body {
   color: #ccc;
 
 }
+.comm1, .comm2 {
+  background-color: #111;
+  padding: 20px;
+  color: #ccc;}
+ .container1 {
+      /* background-color: #1a1a1a; */
+/* text-align: center; */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
 
+      
+    }
+    .code img {
+      width: 60%;
+      /* height: auto; */
+      /* border-radius: 16px; */
+      /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); */
+    }
+    h1 {
+      color: #a399ff;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 /* === الصفحة الرئيسية والخلفية === */
 .home {
   background-image: url("https://i.postimg.cc/G3zTw64f/view-robot-tending-maintaining-gardens.jpg");
