@@ -3,206 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GR project</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">  
+    <title>GR project - Smart Garden Components</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/smart-garden.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
-    <body>
-      <div class="home">
-
+    <div class="home">
         <header>
-          <div class="logo"><a href="index.html"><img src="images/Icon[1].png" alt=""></a></div>
-          <nav>
-            <a href="index.html">Home</a>
-            <a href="./Project-components.html">Project components</a>
-            <a href="./technologies-used.html">Technologies Used</a>
-          <a href="./about.html">Our Team</a>
-            <a href="contact.html">Contact Us</a>
-          </nav>
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/Icon[1].png" alt="My Academia Logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Project-components.html">Project components</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./technologies-used.html">Technologies Used</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./about.html">Our Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
+
         <section>
-              <div class="container">
-                  <div class="front">
-  
-                      <div class="discription">
-                          <div class="text">
-                              <h1>Technologies Powering My Academia</h1>
-                              <p>Discover the cutting-edge hardware and software technologies that make our smart academy system innovative and efficient.</p>
-                          </div>
-                          <div class="butt">
-                               <!-- <button class="btn">Explore More</button> -->
-                          </div>
-                      </div>
-                      <!-- <div class="imgg">
-                          <img src="./images/Blog post-amico.png" alt="">
-                      </div> -->
-                  </div>
-              </div>
-          </div>
+            <div class="container">
+                <div class="front">
+                    <div class="discription">
+                        <div class="text">
+                            <h1>Smart Garden System Components Overview</h1>
+                            <p>Explore the innovative hardware that powers our automated garden, ensuring optimal plant health, efficient watering, and climate control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-          </div>
-   <div class="comm1">
+    </div>
+
+    <div class="comm1">
         <div class="container1">
-        <h1>Prototyping using Arduino</h1>
-  
-        <div class="code">
-          <img src="https://i.postimg.cc/Pf63579Y/Screenshot-2025-05-06-142906-removebg-preview.png" alt="">
-          <br>
-          <br>
-          <br>
-          <br>
+            <h1 class="text-center">Prototyping using Arduino</h1>
+
+            <div class="code text-center mb-5">
+                <img src="https://i.postimg.cc/Pf63579Y/Screenshot-2025-05-06-142906-removebg-preview.png" alt="Code Screenshot" class="img-fluid">
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.postimg.cc/d1xkv4hR/ESP32-Smart-PG.jpg" alt="Smart Garden Prototype" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Prototype Image</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="https://i.postimg.cc/T1rHMfn8/Garden.avif" alt="Circuit Diagram" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Circuit Diagram Reference</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="section">
-        <div class="card">
-          <img src="https://i.postimg.cc/d1xkv4hR/ESP32-Smart-PG.jpg" alt="Code Screenshot">
+    </div>
+
+    <section class="conn">
+        <section class="how-it-works">
+            <div class="nameofcom">
+                <div class="divider"></div>
+                <h2>FC-28 Soil Moisture Sensor</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="component row align-items-center">
+                <div class="component-img col-md-4 col-12 text-center mb-3 mb-md-0">
+                    <img src="images/Soil Hygrometer Detection Module Moisture Sensor Fc-28 DC 3_3v-5v, White.png" alt="FC-28 Soil Moisture Sensor" class="img-fluid" />
+                </div>
+                <div class="component-content col-md-8 col-12">
+                    <p>
+                        <strong>🔍 What it does:</strong> Monitors <strong>soil moisture levels</strong> using electrical conductivity, ensuring the soil stays adequately watered.<br><br>
+                        <strong>⚙️ How it works:</strong><br>
+                        - Produces an <strong>analog voltage</strong> (0–3.3V) based on moisture level.<br>
+                        - Connected to an <strong>ESP32 analog pin</strong> (ADC).<br>
+                        - When moisture drops <strong>below a predefined threshold</strong>, the ESP32 <strong>automatically activates the water pump</strong> to irrigate the garden.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="nameofcom">
+                <div class="divider"></div>
+                <h2>R385 DC6-12V Water Pump</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="component row align-items-center">
+                <div class="component-img col-md-4 col-12 text-center mb-3 mb-md-0">
+                    <img src="images/Dc 12v Motor Electric Tea Pot Mini Gear Water Pump For 7_5mm.png" alt="R385 DC Water Pump" class="img-fluid" />
+                </div>
+                <div class="component-content col-md-8 col-12">
+                    <p>
+                        <strong>🔍 What it does:</strong> Supplies water to the garden automatically when soil moisture is low.<br><br>
+                        <strong>⚙️ How it works:</strong><br>
+                        - Operated through a <strong>5V or 12V relay module</strong>, since the <strong>ESP32 can’t directly drive high-voltage loads</strong>.<br>
+                        - The <strong>relay is triggered via a digital pin (GPIO23)</strong> on the ESP32.<br>
+                        - Once activated, the pump delivers water as needed based on real-time soil readings.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="nameofcom">
+                <div class="divider"></div>
+                <h2>5V/12V/24V Relay Module – High-Voltage Device Control</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="component row align-items-center">
+                <div class="component-img col-md-4 col-12 text-center mb-3 mb-md-0">
+                    <img src="images/4 Channel 5V Relay Module - Wiki.png" alt="Relay Module" class="img-fluid" />
+                </div>
+                <div class="component-content col-md-8 col-12">
+                    <p>
+                        <strong>🔍 What it does:</strong> Controls high-power devices like pumps and fans by using low-voltage signals from the ESP32.<br><br>
+                        <strong>⚙️ How it works:</strong><br>
+                        - The <strong>ESP32 sends a 3.3V signal</strong> to the relay's control pin.<br>
+                        - The <strong>relay acts as a switch</strong>, allowing high-voltage devices to be turned ON or OFF safely.<br>
+                        - Ensures isolation between the microcontroller and high-power circuits.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="nameofcom">
+                <div class="divider"></div>
+                <h2>DHT11 Sensor – Temperature & Humidity Monitor</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="component row align-items-center">
+                <div class="component-img col-md-4 col-12 text-center mb-3 mb-md-0">
+                    <img src="images/Arduino Dht11 Dht-11.png" alt="DHT11 Sensor" class="img-fluid" />
+                </div>
+                <div class="component-content col-md-8 col-12">
+                    <p>
+                        <strong>🔍 What it does:</strong> Measures environmental temperature and humidity levels in real time within the garden.<br><br>
+                        <strong>⚙️ How it works:</strong><br>
+                        - Communicates with the ESP32 through a <strong>digital pin (GPIO18)</strong>.<br>
+                        - When the <strong>temperature exceeds a set threshold</strong>, the ESP32 activates the <strong>12V cooling fan</strong> using a relay.<br>
+                        - Enables smart climate control for the garden system.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="nameofcom">
+                <div class="divider"></div>
+                <h2>12V Fan (Garden Cooling)</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="component row align-items-center">
+                <div class="component-img col-md-4 col-12 text-center mb-3 mb-md-0">
+                    <img src="images/DC 5010 5V_12V_24V Computer CPU Kühler Mini Lüfter 50MM Kleiner Abluftventilator für 3D-Drucker 2.png" alt="12V Fan" class="img-fluid" />
+                </div>
+                <div class="component-content col-md-8 col-12">
+                    <p>
+                        <strong>🔍 What it does:</strong> Provides automatic cooling for the garden area to maintain optimal environmental conditions.<br><br>
+                        <strong>⚙️ How it works:</strong><br>
+                        - Operated through a <strong>relay module</strong>, similar to the water pump.<br>
+                        - The <strong>ESP32</strong> activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
+                        - Helps protect plants from heat stress in hot weather.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="nameofcom">
+                <div class="divider"></div>
+                <h2>ESP32 Module (Garden Control)</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="component row align-items-center flex-md-row-reverse"> <div class="component-img col-md-4 col-12 text-center mb-3 mb-md-0">
+                    <img src="./images/NodeMcu ESP-32S Lua ESP-WROOM-32 WIFI Development Board.png" alt="ESP32 Board" class="img-fluid">
+                </div>
+                <div class="component-content col-md-8 col-12">
+                    <p>
+                        <strong>🔍 What it does:</strong> The <strong>ESP32 module</strong> serves as the <strong>central processing and communication unit</strong> for the smart garden, collecting real-time sensor data, processing information, and controlling actuators.<br><br>
+
+                        <strong>Key Functions:</strong><br><br>
+
+                        <strong>1. Sensor Interfacing</strong><br>
+                        <strong>🔍 What it does:</strong> Connects to various <strong>analog and digital sensors</strong> (e.g., Soil Moisture, DHT11) to monitor garden conditions.<br>
+                        <strong>⚙️ How it works:</strong> <br>ADC (Analog-to-Digital Converter) reads <strong>analog values</strong> (e.g., soil moisture).<br>GPIO pins read <strong>digital signals</strong> (e.g., from DHT11).<br><br>
+
+                        <strong>2. Data Processing</strong><br>
+                        <strong>🔍 What it does:</strong> Analyzes incoming sensor data and triggers automated actions.<br>
+                        <strong>⚙️ How it works:</strong> <br>Compares sensor readings to predefined <strong>thresholds</strong> (e.g., soil moisture < 30% → activate water pump).<br>Runs <strong>lightweight algorithms</strong> for intelligent irrigation and climate control.<br><br>
+
+                        <strong>3. Wireless Communication</strong><br>
+                        <strong>🔍 What it does:</strong> Transmits garden data to <strong>Firebase</strong> and receives commands from the mobile app.<br>
+                        <strong>⚙️ How it works:</strong> <br>The built-in <strong>Wi-Fi module</strong> connects to a local network.<br>Uses <strong>HTTP/MQTT protocols</strong> to sync data with Firebase in real-time.<br><br>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-id">
+                    <img src="images/Icon[1].png" alt="My Academia Logo">
+                </div>
+
+                <div class="footer-connect">
+                    Every Corner,Every Details...In Your Control
+                </div>
+
+                <div class="social-links">
+                    <div class="connect-text">Connect with us</div>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-          <div class="card">
-            <img src="https://i.postimg.cc/T1rHMfn8/Garden.avif" alt="Circuit diagram">
-          </div>
-      
-  
-      </div>
-    </div>
+    </footer> -->
 
-      </div>
-<section class="conn">
-
-  <section class="how-it-works">
-    <!-- <h1>How it works?</h1> -->
-    <div class="nameofcom">
-      <div class="divider"></div>
-      <h2>FC-28 Soil Moisture Sensor</h2>  
-      <div class="divider"></div>
-    </div>
-  
-    <div class="component">
-      <div class="component-img">
-        <img src="images/Soil Hygrometer Detection Module Moisture Sensor Fc-28 DC 3_3v-5v, White.png" alt="FC-28 Soil Moisture Sensor" />
-      </div>
-      <div class="component-content">
-        <p>
-          <strong>🔍 What it does:</strong> Monitors <strong>soil moisture levels</strong> using electrical conductivity, ensuring the soil stays adequately watered.<br><br>
-  
-          <strong>⚙️ How it works:</strong><br>
-          - Produces an <strong>analog voltage</strong> (0–3.3V) based on moisture level.<br>
-          - Connected to an <strong>ESP32 analog pin</strong> (ADC).<br>
-          - When moisture drops <strong>below a predefined threshold</strong>, the ESP32 <strong>automatically activates the water pump</strong> to irrigate the garden.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-
-
-  <section class="how-it-works">
-    <!-- <h1>How it works?</h1> -->
-    <div class="nameofcom">
-      <div class="divider"></div>
-      <h2>R385 DC6-12V Water Pump </h2>  
-      <div class="divider"></div>
-    </div>
-  
-    <div class="component">
-      <div class="component-img">
-        <img src="images/Dc 12v Motor Electric Tea Pot Mini Gear Water Pump For 7_5mm.png" alt="R385 DC Water Pump" />
-      </div>
-      <div class="component-content">
-        <p>
-          <strong>🔍 What it does:</strong> Supplies water to the garden automatically when soil moisture is low.<br><br>
-  
-          <strong>⚙️ How it works:</strong><br>
-          - Operated through a <strong>5V or 12V relay module</strong>, since the <strong>ESP32 can’t directly drive high-voltage loads</strong>.<br>
-          - The <strong>relay is triggered via a digital pin (GPIO23)</strong> on the ESP32.<br>
-          - Once activated, the pump delivers water as needed based on real-time soil readings.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  <section class="how-it-works">
-    <!-- <h1>How it works?</h1> -->
-    <div class="nameofcom">
-      <div class="divider"></div>
-      <h2>5V/12V/24V Relay Module – High-Voltage Device Control</h2>  
-      <div class="divider"></div>
-    </div>
-  
-    <div class="component">
-      <div class="component-img">
-        <img src="images/4 Channel 5V Relay Module - Wiki.png" alt="Relay Module" />
-      </div>
-      <div class="component-content">
-        <p>
-          <strong>🔍 What it does:</strong> Controls high-power devices like pumps and fans by using low-voltage signals from the ESP32.<br><br>
-  
-          <strong>⚙️ How it works:</strong><br>
-          - The <strong>ESP32 sends a 3.3V signal</strong> to the relay's control pin.<br>
-          - The <strong>relay acts as a switch</strong>, allowing high-voltage devices to be turned ON or OFF safely.<br>
-          - Ensures isolation between the microcontroller and high-power circuits.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  <section class="how-it-works">
-    <!-- <h1>How it works?</h1> -->
-    <div class="nameofcom">
-      <div class="divider"></div>
-      <h2>DHT11 Sensor – Temperature & Humidity Monitor</h2>  
-      <div class="divider"></div>
-    </div>
-  
-    <div class="component">
-      <div class="component-img">
-        <img src="images/Arduino Dht11 Dht-11.png" alt="DHT11 Sensor" />
-      </div>
-      <div class="component-content">
-        <p>
-          <strong>🔍 What it does:</strong> Measures environmental temperature and humidity levels in real time.<br><br>
-  
-          <strong>⚙️ How it works:</strong><br>
-          - Communicates with the ESP32 through a <strong>digital pin (GPIO18)</strong>.<br>
-          - When the <strong>temperature exceeds a set threshold</strong>, the ESP32 activates the <strong>12V cooling fan</strong> using a relay.<br>
-          - Enables smart climate control for the system.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  <section class="how-it-works">
-    <!-- <h1>How it works?</h1> -->
-    <div class="nameofcom">
-      <div class="divider"></div>
-      <h2> 12V Fan </h2>  
-      <div class="divider"></div>
-    </div>
-  
-    <div class="component">
-      <div class="component-img">
-        <img src="images/DC 5010 5V_12V_24V Computer CPU Kühler Mini Lüfter 50MM Kleiner Abluftventilator für 3D-Drucker 2.png" alt="12V Fan" />
-      </div>
-      <div class="component-content">
-        <p>
-          <strong>🔍 What it does:</strong> Provides automatic cooling for the garden area to maintain optimal environmental conditions.<br><br>
-  
-          <strong>⚙️ How it works:</strong><br>
-          - Operated through a <strong>relay module</strong>, similar to the water pump.<br>
-          - The <strong>ESP32</strong> activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
-          - Helps protect plants from heat stress in hot weather.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-</section>
-      
-
-
-   
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/smart-garden-script.js"></script>
 </body>
-  </body>
 </html>

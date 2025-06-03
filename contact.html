@@ -3,242 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Academia - Our Team</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #3498db;
-            --secondary: #2c3e50;
-            --accent: #e74c3c;
-            --light: #f8f9fa;
-            --dark: #212529;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-        
-        .navbar {
-            background-color: var(--secondary);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px 60px;
-}
-.home {    background: linear-gradient(rgba(0, 0, 0, 0.167), rgba(0, 0, 0, 0.153)),url('https://i.postimg.cc/gJKBrLV2/contact-us-communication-support-service-assistance-concept.jpg') no-repeat center center/cover;
-
-    /* background-image: url("https://i.postimg.cc/h4bDHm5P/close-up-hardware-component-background.jpg"); */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed; /* Optional: for parallax effect */
-    height: 80vh; /* Changed from 86vh to full viewport height */
-    padding: 5px 0 10px 0;
-    position: relative;
-}
-.logo {
-font-weight: 700;
-font-size: 1.5rem;
-color: white;
-}
-.logo img {
-    width: 80%;
-}
-nav a {
-color: white;
-text-decoration: none;
-margin: 0 15px;
-font-weight: 500;
-}
-    /* 
-    .home {
-    height: 86vh;
-    padding: 5px 0 10px 0;
-    } */
-
-.front {
-    text-align: center;
-    color: white;
-margin-top: 150px;
-
-}
-
-        /* .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 60vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        } */
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        .team-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 2rem;
-            height: 100%;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .team-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .team-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .team-card:hover .team-img img {
-            transform: scale(1.1);
-        }
-        
-        .team-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .team-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
-        
-        .team-info .position {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: var(--light);
-            color: var(--secondary);
-            border-radius: 50%;
-            margin: 0 0.3rem;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        footer {
-            background-color: var(--secondary);
-            color: white;
-            padding: 3rem 0;
-        }
-        
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <title>My Academia - Contact Us</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
     <div class="home">
-
         <header>
-          <div class="logo"><a href="index.html"><img src="images/Icon[1].png" alt=""></a></div>
-          <nav>
-            <a href="index.html">Home</a>
-            <a href="./Project-components.html">Project components</a>
-            <a href="./technologies-used.html">Technologies Used</a>
-          <a href="./about.html">Our Team</a>
-            <a href="contact.html">Contact Us</a>
-          </nav>
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/Icon[1].png" alt="My Academia Logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Project-components.html">Project components</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./technologies-used.html">Technologies Used</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">Our Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
+
         <section>
-              <div class="container">
-                  <div class="front">
-  
-                      <div class="discription">
-                          <div class="text">
-                            <!-- <h1 class="display-4 fw-bold mb-4">Contact us</h1> -->
-
-                        
-                     
-                  </div>
-              </div>
-          </div>
+            <div class="container">
+                <div class="front">
+                    <div class="discription">
+                        <div class="text">
+                            <h1 class="display-4 fw-bold mb-4 diss">Get in Touch with My Academia</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-          </div>
+    </div>
 
-   
-
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
+    <section id="contact-form-section" class="section bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Our Team</h2>
-                <p class="lead">Get in touch with us for more information about My Academia</p>
+                <h2>Send Us a Message</h2>
+                <p class="lead">Fill out the form below and we'll get back to you as soon as possible.</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -274,52 +96,33 @@ margin-top: 150px;
         </div>
     </section>
 
-   
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('animate-in');
-                }
-            });
-        }
-        
-        // Run on page load
-        window.addEventListener('load', animateOnScroll);
-        // Run on scroll
-        window.addEventListener('scroll', animateOnScroll);
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(44, 62, 80, 0.9)';
-                navbar.style.padding = '0.5rem 0';
-            } else {
-                navbar.style.backgroundColor = 'var(--secondary)';
-                navbar.style.padding = '1rem 0';
-            }
-        });
-    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-id">
+                    <img src="images/Icon[1].png" alt="My Academia Logo">
+                </div>
+
+                <div class="footer-connect">
+                    Every Corner,Every Details...In Your Control
+                </div>
+
+                <div class="social-links">
+                    <div class="connect-text">Connect with us</div>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/contact-script.js"></script>
 </body>
 </html>

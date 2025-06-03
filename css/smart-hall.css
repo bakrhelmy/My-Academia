@@ -1,276 +1,588 @@
-/* === الأساسيات العامة === */
+:root {
+    --primary-blue: #0B2131;
+    --secondary-blue: #09c;
+    --accent-red: #DB2131;
+    --text-dark: #333;
+    --light-gray: #f8f9fa;
+
+    /* Specific colors from smart-hall.css, adapted to your scheme */
+    --dark-background: #111; /* Dark background for comm1/comm2 sections */
+    --card-background: #1a1a1a; /* Card background color */
+    --highlight-color: #a399ff; /* Highlight color for headings */
+    --text-light-gray: #ccc; /* Light gray text */
+    --text-lighter-gray: #aaa; /* Even lighter gray text */
+    --blue-highlight: #888bff; /* Blue highlight for titles/dividers */
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Essential for responsive design */
+}
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #ccc;
-
+    background-color: var(--light-gray); /* Default body background */
+    color: var(--text-dark); /* Default text color */
 }
-.comm1, .comm2 {
-  background-color: #111;
-  padding: 20px;
-  color: #ccc;}
- .container1 {
-      /* background-color: #1a1a1a; */
-/* text-align: center; */
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
 
-      
-    }
-    .code img {
-      width: 60%;
-      /* height: auto; */
-      /* border-radius: 16px; */
-      /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); */
-    }
-    h1 {
-      color: #a399ff;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
+.container {
+    width: 85%; /* Consistent container width */
+    margin: 0 auto;
+}
 
-    .section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      width: 100%;
-      max-width: 1200px;
-    }
+/* Specific container for some sections in smart-hall.css */
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Center content in container1 */
+}
 
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      max-width: 500px;
-      text-align: center;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-/* === الصفحة الرئيسية والخلفية === */
+/* --- Header & Hero Section --- */
 .home {
-  background-image: url("https://i.postimg.cc/brdyjCMX/abstract-fantasy-landscape-with-color-year-purple-tones.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed; /* Optional: for parallax effect */
-  height: 80vh; /* Changed from 86vh to full viewport height */
-  padding: 5px 0 10px 0;
-  position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.345), rgba(0, 0, 0, 0.7)), url('https://i.postimg.cc/brdyjCMX/abstract-fantasy-landscape-with-color-year-purple-tones.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+    height: 80vh;
+    padding-top: 5px; /* Initial padding, adjusted by fixed-top navbar */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-/* Optional overlay to improve text readability */
-.home::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 0;
+/* Ensure content stays above overlay */
+.home > header, .home > section {
+    position: relative;
+    z-index: 1;
+    width: 100%;
 }
 
-/* Make sure content appears above overlay */
-.front, header {
-  position: relative;
-  z-index: 1;
+/* Navbar adjustments for fixed-top */
+.navbar {
+    background-color: transparent !important; /* Start transparent */
+    padding: 20px 0;
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for both */
+    width: 100%;
+    z-index: 1030; /* Higher z-index for fixed navbar */
 }
 
-/* === باقي الأكواد كما هي === */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
+/* Add a background to the navbar when scrolled (handled by JS) */
+.navbar.scrolled {
+    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll, using primary-blue base */
+    padding: 10px 0; /* Smaller padding when scrolled */
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: white;
-}
-.logo img {
-  width: 80%;
-
-  margin-right: 10px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
+.navbar-brand img {
+    width: 100%; /* Adjust logo size for desktop */
 }
 
-/* === الجزء الأمامي من الصفحة === */
+.navbar-nav .nav-link {
+    color: white !important; /* White links for dark navbar background */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--secondary-blue) !important;
+}
+
+/* Hero Section Content */
+.home section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-top: 70px; /* Added padding to ensure content is below the fixed navbar initially */
+}
+
 .front {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* margin-top: 52px; */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    width: 100%;
 }
 
 .discription {
-  padding-top: 200px;
-  
-  width:50%;
+    width: 80%; /* Adjusted width for better readability on desktop */
+    text-align: center;
+    padding-top: 0; /* Remove specific padding, let flexbox handle it */
 }
 
 .text h1 {
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .text p {
-  color: white;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.butt .btn {
-  background-color: #09c;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 156, 204, 0.3);
+/* --- Prototyping Section --- */
+.comm1, .comm2 {
+    background-color: var(--dark-background);
+    padding: 60px 20px; /* Increased padding */
+    color: var(--text-light-gray);
+    text-align: center; /* Center everything in this section */
 }
 
-.butt .btn:hover {
-  background-color: #0788b0;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 156, 204, 0.4);
+.comm1 h1 {
+    color: var(--highlight-color);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
-.imgg {
-  width: 50%;
+.code img {
+    width: 60%; /* Original width */
+    max-width: 800px; /* Max width to prevent it from getting too large */
+    height: auto;
+    margin-bottom: 40px; /* Space below image */
 }
 
-.imgg img {
-  width: 100%;
-  height: auto;
+.section { /* This .section is specific to .comm1, renamed to .prototype-cards for clarity */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the cards section */
 }
 
-/* === قسم كيف يعمل النظام === */
+.card {
+    background-color: var(--card-background);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    width: 100%; /* Default to full width on small screens */
+    max-width: 500px;
+    text-align: center;
+    /* Removed margin-bottom here as Bootstrap's row/col handles it */
+}
+
+.card-img-top { /* Bootstrap class for top images */
+    width: 100%;
+    height: 300px; /* Fixed height for image consistency */
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: var(--highlight-color); /* Title color for cards */
+    font-size: 1.4rem;
+    margin-top: 15px;
+}
+
+
+/* --- How It Works / Components Section --- */
+.conn { /* Renamed to .components-detail-section for clarity */
+    background-color: var(--dark-background); /* Consistent background */
+    padding: 60px 0; /* Padding for the entire section */
+}
+
 .how-it-works {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-  border-radius: 16px;
-  background-color: #181818;
+    max-width: 1000px;
+    margin: 40px auto; /* Margin between component blocks */
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--card-background);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05); /* Soft shadow */
+    color: var(--text-light-gray);
 }
 
-.how-it-works h1 {
-  text-align: center;
-  padding: 0 33px;
-  color: #888bff;
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.how-it-works h1 { /* This H1 seems to be duplicated with comm1's H1 */
+    text-align: center;
+    padding: 0 33px;
+    color: var(--blue-highlight);
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-.intro {
-  width: 60%;
-  font-size: 1.1em;
-  margin-bottom: 40px;
-  color: #aaa;
+.intro { /* Not found in your current HTML but kept for reference */
+    width: 60%;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: var(--text-lighter-gray);
 }
 
-.component {
-  padding-left: 40px;
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.component { /* This is now a Bootstrap row */
+    padding: 20px 0; /* Adjust internal padding */
+    display: flex; /* Kept for older browsers if needed, but Bootstrap row already uses flex */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: center; /* Vertically align items */
 }
 
 .component-img {
-  flex: 1 1 250px;
-  text-align: center;
+    /* flex: 1 1 250px; /* Flex properties, Bootstrap columns handle this now */
+    text-align: center;
 }
 
 .component-img img {
-  padding: 20px;
-  max-width: 200px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    padding: 20px; /* Padding inside the image container */
+    max-width: 250px; /* Max width for individual component images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
 .component-content {
-  flex: 2 1 400px;
+    /* flex: 2 1 400px; /* Flex properties, Bootstrap columns handle this now */
 }
 
-.component-content h2 {
-  color: #888bff;
-  font-size: 1.5em;
-  margin-bottom: 10px;
+.component-content h2 { /* This is now outside the component-content div in HTML */
+    color: var(--blue-highlight);
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .component-content p {
-  line-height: 1.6em;
-  font-size: 1.1em;
-  color: #ccc;
+    line-height: 1.6em;
+    font-size: 1.1em;
+    color: var(--text-light-gray);
+}
+
+.component-content strong {
+    color: white; /* Bold text in descriptions */
 }
 
 .divider {
-  width: 30%;
-  height: 3px;
-  background: #888bff;
-  margin: 45px 0 50px 0;
-  opacity: 0.4;
+    width: 30%;
+    height: 3px;
+    background: var(--blue-highlight);
+    margin: 45px auto 50px auto; /* Centered margin */
+    opacity: 0.4;
 }
 
-/* === الاسم بين الأقسام === */
 .nameofcom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px; /* Space above component title */
 }
 
 .nameofcom h2 {
-  color: #888bff;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  text-align: center;
-  padding: 0 10px;
+    color: var(--blue-highlight);
+    font-size: 2em; /* Larger size for main component titles */
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 0; /* Remove default margin */
 }
 
-/* === جزء الاتصال/الخاتمة === */
-.conn {
-  background-color: #111;
-  padding: 20px;
+/* ESP32 Module specific image - special handling because it's outside component-img */
+.component .img-fluid[alt="ESP32 Board"] { /* Specific selector for this image */
+    max-width: 300px; /* Limit its size */
+    margin-top: 20px; /* Space from text */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-/* === استجابة الهواتف والشاشات الصغيرة === */
-@media (max-width: 768px) {
-  .component {
-      flex-direction: column;
-      text-align: center;
-  }
+/* --- Footer (Copied for consistency) --- */
+footer {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 60px 0 30px;
+}
 
-  .component-content {
-      text-align: left;
-  }
+.footer-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-  .front {
-      flex-direction: column;
-      text-align: center;
-  }
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-  .discription, .imgg {
-      width: 100%;
-  }
+.footer-id {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-id img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-connect {
+    flex: 2;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0 20px;
+}
+
+.social-links {
+    flex: 1;
+    min-width: 200px;
+    text-align: right;
+}
+
+.connect-text {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 800;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-3px);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint for navbar collapse */
+    .navbar-collapse {
+        background-color: var(--primary-blue); /* Dark background for mobile menu */
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-brand img {
+        width: 100%; /* Smaller logo on mobile */
+    }
+
+    /* Hero section adjustments for smaller screens */
+    .home {
+        height: auto; /* Allow height to adjust */
+        min-height: 50vh; /* Minimum height to keep hero visible */
+    }
+
+    .home section {
+        padding-top: 20px; /* Reduce padding as navbar is dark now */
+        padding-bottom: 40px; /* Add some bottom padding */
+    }
+
+    .front {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .discription {
+        width: 90%; /* Adjust width for smaller screens */
+        text-align: center;
+    }
+
+    .text h1 {
+        font-size: 2rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    /* Prototyping Section */
+    .comm1 {
+        padding: 40px 15px; /* Adjust padding */
+    }
+    .comm1 h1 {
+        font-size: 2rem;
+    }
+    .code img {
+        width: 80%; /* Allow larger on small screens */
+        margin-bottom: 20px;
+    }
+    .section.row > .col-md-6 .card { /* Target cards directly for smaller screens */
+        max-width: none; /* Remove max-width constraint */
+        width: 100%; /* Take full width */
+    }
+    .card-img-top {
+        height: 200px; /* Smaller fixed height for prototype images */
+    }
+
+    /* How It Works / Components Section */
+    .conn {
+        padding: 40px 15px;
+    }
+    .how-it-works {
+        margin: 30px auto; /* Adjust margin */
+        padding: 15px;
+    }
+    .nameofcom h2 {
+        font-size: 1.6em; /* Adjust font size */
+        padding: 0 10px;
+    }
+    .divider {
+        margin: 25px 0; /* Adjust margin for divider */
+    }
+    .component {
+        flex-direction: column; /* Stack image and content vertically */
+        text-align: center;
+        padding: 15px 0;
+    }
+    .component-img {
+        margin-bottom: 15px;
+    }
+    .component-content {
+        text-align: left; /* Keep text left-aligned in content block */
+    }
+    .component-content p {
+        font-size: 1em;
+    }
+    .component-content strong {
+        display: block; /* Make bold text new line for clarity on mobile */
+        margin-bottom: 5px;
+    }
+    .component .img-fluid[alt="ESP32 Board"] {
+        max-width: 200px;
+        margin-top: 15px;
+    }
+}
+
+
+@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+    .container {
+        width: 90%;
+    }
+
+    /* Hero Section */
+    .home {
+        min-height: 40vh; /* Even smaller min-height */
+    }
+    .home section {
+        padding-top: 10px; /* Further adjust padding */
+    }
+    .text h1 {
+        font-size: 1.8rem;
+    }
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    /* Prototyping Section */
+    .comm1 h1 {
+        font-size: 1.8rem;
+    }
+    .card-img-top {
+        height: 180px; /* Adjust height for single column display */
+    }
+
+    /* How It Works / Components Section */
+    .how-it-works {
+        margin: 20px auto;
+        padding: 10px;
+    }
+    .nameofcom h2 {
+        font-size: 1.4em;
+    }
+    .component-img img {
+        max-width: 200px; /* Max width for images */
+        padding: 10px;
+    }
+    .component-content p {
+        font-size: 0.95em;
+    }
+    .component .img-fluid[alt="ESP32 Board"] {
+        max-width: 180px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-id,
+    .footer-connect,
+    .social-links {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-connect {
+        font-size: 1.3rem;
+        padding: 0;
+    }
+}
+
+@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+    .navbar-brand img {
+        width: 200px; /* Even smaller logo on very small screens */
+    }
+
+    .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .text p {
+        font-size: 0.85rem;
+    }
+
+    .comm1 h1 {
+        font-size: 1.5rem;
+    }
+    .code img {
+        width: 90%;
+    }
+    .card-img-top {
+        height: 150px;
+    }
+
+    .nameofcom h2 {
+        font-size: 1.2em;
+        padding: 0 5px;
+    }
+    .component-img img {
+        max-width: 150px;
+    }
+    .component-content p {
+        font-size: 0.9em;
+    }
+    .component .img-fluid[alt="ESP32 Board"] {
+        max-width: 150px;
+    }
 }

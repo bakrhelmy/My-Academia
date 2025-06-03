@@ -1,64 +1,70 @@
 :root {
-    --primary-blue: #0B2131;
-    --secondary-blue: #09c;
+    --primary-blue: #0B2131; /* Your existing primary color */
+    --secondary-blue: #09c; /* Your existing secondary color */
     --accent-red: #DB2131;
     --text-dark: #333;
     --light-gray: #f8f9fa;
+
+    /* Original variables from inline style, adapted for consistency */
+    --primary-theme: #3498db; /* Specific blue for buttons/links */
+    --secondary-theme: #2c3e50; /* Specific dark gray/blue for text/navbar */
+    --accent-theme: #e74c3c; /* Specific red */
+    --light-theme: #f8f9fa; /* Specific light background */
+    --dark-theme: #212529; /* Specific dark text */
 }
 
 * {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Rubik', sans-serif; /* Your preferred font */
     padding: 0;
     margin: 0;
     box-sizing: border-box; /* Essential for responsive design */
 }
 
 body {
-    background-color: var(--light-gray);
+    line-height: 1.6;
+    color: var(--dark-theme); /* Using specific dark theme color */
+    background-color: var(--light-theme); /* Using specific light theme color */
 }
 
 .container {
-    width: 85%; /* Adjusted for slightly more content width */
+    width: 85%; /* Consistent container width */
     margin: 0 auto;
-}
-
-a { /* Global link styling for this specific CSS file */
-    text-decoration: none;
-    color: inherit;
 }
 
 /* --- Header & Hero Section --- */
 .home {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.postimg.cc/zfQvs244/digital-transformation-corporate-wallpaper.jpg') no-repeat center center/cover;
+    /* Background image from your provided code */
+    background: linear-gradient(rgba(0, 0, 0, 0.167), rgba(0, 0, 0, 0.153)), url('https://i.postimg.cc/gJKBrLV2/contact-us-communication-support-service-assistance-concept.jpg') no-repeat center center/cover;
     background-attachment: fixed; /* Parallax effect */
     height: 80vh;
     padding-top: 5px; /* Initial padding, will be adjusted by fixed-top navbar */
     position: relative;
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack header and section */
-    justify-content: flex-start; /* Align items from the start */
-    align-items: center; /* Center items horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* Ensure content stays above overlay */
 .home > header, .home > section {
     position: relative;
     z-index: 1;
-    width: 100%; /* Take full width */
+    width: 100%;
 }
 
 /* Navbar adjustments for fixed-top */
 .navbar {
     background-color: transparent !important; /* Start transparent */
     padding: 20px 0;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    width: 100%; /* Ensure navbar takes full width */
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for both */
+    width: 100%;
     z-index: 1030; /* Higher z-index for fixed navbar */
 }
 
 /* Add a background to the navbar when scrolled (handled by JS) */
 .navbar.scrolled {
-    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll */
+    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll, using primary-blue base */
+    padding: 10px 0; /* Smaller padding when scrolled */
 }
 
 .navbar-brand img {
@@ -80,9 +86,9 @@ a { /* Global link styling for this specific CSS file */
 
 /* Hero Section Content */
 .home section {
-    flex-grow: 1; /* Allows the section to fill remaining space */
+    flex-grow: 1;
     display: flex;
-    align-items: center; /* Vertically center content within section */
+    align-items: center;
     padding-top: 70px; /* Added padding to ensure content is below the fixed navbar initially */
 }
 
@@ -101,7 +107,7 @@ a { /* Global link styling for this specific CSS file */
 
 .text h1 {
     color: white;
-    font-size: 2.8rem; /* Adjusted for better readability */
+    font-size: 3rem; /* Adjusted for better readability */
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -109,129 +115,79 @@ a { /* Global link styling for this specific CSS file */
 
 .text p {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    max-width: 700px; /* Limit paragraph width */
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Hide .imgg on this page if not used */
-.imgg {
-    display: none;
-}
-
-/* --- Technologies Section (Software) --- */
-.technologies {
-    padding: 80px 0; /* Increased padding */
-    background-color: var(--light-gray); /* Light background for this section */
+/* --- Contact Section --- */
+.section {
+    padding: 80px 0; /* Consistent section padding */
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 60px; /* Increased margin */
-    font-size: 2.5rem; /* Adjusted font size */
-    color: var(--primary-blue); /* Using variable */
-    position: relative;
+    margin-bottom: 60px;
 }
 
-.section-title::after {
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue); /* Using your primary-blue */
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
-    background: var(--secondary-blue); /* Using variable */
+    background: var(--secondary-blue); /* Using your secondary-blue */
     margin: 15px auto 0;
 }
 
-.tech-category {
-    margin-bottom: 70px; /* Increased margin */
+.section-title .lead {
+    color: var(--text-dark); /* Using your text-dark */
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 10px auto 0;
 }
 
-.category-title {
-    font-size: 1.8rem; /* Adjusted font size */
-    color: var(--primary-blue); /* Using variable */
-    margin-bottom: 30px; /* Increased margin */
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eaeaea;
+.card {
+    border: none; /* Remove default Bootstrap card border */
 }
 
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjusted min-width for two cards */
-    gap: 30px;
+/* Bootstrap Button Styling */
+.btn-primary {
+    background-color: var(--secondary-blue) !important; /* Using your secondary-blue */
+    border-color: var(--secondary-blue) !important;
+    transition: all 0.3s ease;
 }
 
-.tech-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex; /* Use flex for content and image layout */
-    flex-direction: column; /* Stack vertically */
-    height: 100%; /* Ensure cards have equal height in row */
+.btn-primary:hover {
+    background-color: var(--primary-blue) !important; /* Darker blue on hover */
+    border-color: var(--primary-blue) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.tech-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+/* Animation on scroll for the card */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.tech-image {
-    height: 200px;
-    overflow: hidden;
-    flex-shrink: 0; /* Prevent image from shrinking */
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.tech-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.tech-card:hover .tech-image img {
-    transform: scale(1.1);
-}
-
-.tech-content {
-    padding: 20px;
-    flex-grow: 1; /* Allow content to take remaining space */
-    display: flex;
-    flex-direction: column;
-}
-
-.tech-content h3 {
-    font-size: 1.5rem; /* Adjusted font size */
-    margin-bottom: 10px;
-    color: var(--primary-blue); /* Using variable */
-}
-
-.tech-content p {
-    color: #7f8c8d;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Allow paragraph to take space */
-}
-
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto; /* Push tags to the bottom */
-}
-
-.tech-tag {
-    background: #e0f7fa;
-    color: #00838f;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.85rem; /* Adjusted font size */
-    font-weight: 500;
-}
-
-/* --- Footer (Copied from previous response, adjust if needed) --- */
+/* --- Footer (Copied from previous response for consistency) --- */
 footer {
     background-color: var(--primary-blue);
     color: white;
@@ -307,12 +263,14 @@ footer {
     background-color: var(--secondary-blue);
     transform: translateY(-3px);
 }
-
+.diss{
+    display: none;
+}
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint for navbar collapse */
     .navbar-collapse {
-        background-color: var(--primary-blue); /* Background for mobile menu */
+        background-color: var(--primary-blue); /* Dark background for mobile menu */
         padding: 15px;
         border-radius: 5px;
         margin-top: 10px;
@@ -357,41 +315,24 @@ footer {
     .text p {
         font-size: 1rem;
     }
-
-    .imgg {
-        display: none; /* Ensure image is hidden on smaller screens */
+ .diss{
+        display: block;
+    }
+    /* Contact Section */
+    .section {
+        padding: 60px 0; /* Slightly less padding on smaller screens */
     }
 
-    /* Technologies Section */
-    .section-title {
+    .section-title h2 {
         font-size: 2rem;
-        margin-bottom: 40px;
     }
 
-    .category-title {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+    .section-title .lead {
+        font-size: 1rem;
     }
 
-    .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for tech cards */
-        gap: 20px;
-    }
-
-    .tech-card {
-        height: auto; /* Allow cards to adjust height */
-    }
-
-    .tech-image {
-        height: 150px; /* Smaller image height */
-    }
-
-    .tech-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .tech-content p {
-        font-size: 0.95rem;
+    .card {
+        padding: 1rem !important; /* Adjust padding on card body for small screens */
     }
 }
 
@@ -399,6 +340,9 @@ footer {
 @media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
     .container {
         width: 90%;
+    }
+     .diss{
+        display: block;
     }
 
     /* Hero Section */
@@ -415,33 +359,12 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Technologies Section */
-    .section-title {
+    /* Contact Section */
+    .section-title h2 {
         font-size: 1.8rem;
     }
 
-    .category-title {
-        font-size: 1.3rem;
-    }
-
-    .tech-grid {
-        grid-template-columns: 1fr; /* Single column layout for very small screens */
-        gap: 15px;
-    }
-
-    .tech-image {
-        height: 180px; /* Adjust height for single column display */
-    }
-
-    .tech-content {
-        padding: 15px;
-    }
-
-    .tech-content h3 {
-        font-size: 1.2rem;
-    }
-
-    .tech-content p {
+    .section-title .lead {
         font-size: 0.9rem;
     }
 
@@ -477,20 +400,23 @@ footer {
     .text h1 {
         font-size: 1.5rem;
     }
-
+    .diss{
+        display: block;
+    }
     .text p {
         font-size: 0.85rem;
     }
 
-    .section-title {
+    .section-title h2 {
         font-size: 1.5rem;
     }
 
-    .category-title {
-        font-size: 1.1rem;
+    .card-body {
+        padding: 0.75rem !important; /* Even smaller padding on card body */
     }
 
-    .tech-content h3 {
-        font-size: 1.1rem;
+    .btn-lg {
+        padding: 0.75rem 1.5rem; /* Adjust button size */
+        font-size: 0.9rem;
     }
 }
