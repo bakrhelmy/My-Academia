@@ -3,177 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GR project </title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">  
+    <title>GR project - Project Components</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
-    <link rel="stylesheet" href="./css/Project-components.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="./css/Project-components.css"> <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="home">
-
         <header>
-          <div class="logo"><a href="index.html"><img src="images/Icon[1].png" alt=""></a></div>
-          <nav>
-            <a href="index.html">Home</a>
-            <a href="./Project-components.html">Project components</a>
-            <a href="./technologies-used.html">Technologies Used</a>
-          <a href="./about.html">Our Team</a>
-            <a href="contact.html">Contact Us</a>
-          </nav>
+            <nav class="navbar navbar-expand-lg navbar-dark "> <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/Icon[1].png" alt="My Academia Logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./Project-components.html">Project components</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./technologies-used.html">Technologies Used</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./about.html">Our Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
+
         <section>
-              <div class="container">
-                  <div class="front">
-  
-                      <div class="discription">
-                          <div class="text">
-                              <h1>Discover the hardware components that power My Academia. 
+            <div class="container">
+                <div class="front">
+                    <div class="discription">
+                        <div class="text">
+                            <h1>Discover the hardware components that power My Academia.
                             </h1>
                             <p>
-                                This system integrates IOT automation to create an efficient, intelligent educational environment. Below are all the components used in the hardware implementations of the project.</p>
-                          </div>
-                          <div class="butt">
-                               <!-- <button class="btn">Explore More</button> -->
-                          </div>
-                      </div>
-                      <!-- <div class="imgg">
-                          <img src="./images/Blog post-amico.png" alt="">
-                      </div> -->
-                  </div>
-              </div>
-          </div>
+                                This system integrates IOT automation to create an efficient, intelligent educational environment. Below are all the components used in the hardware implementations of the project.
+                            </p>
+                        </div>
+                        <div class="butt">
+                            </div>
+                    </div>
+                    </div>
+            </div>
         </section>
-          </div>
-     
-      <!-- Technologies Section -->
+    </div>
+
     <section class="technologies">
         <div class="container">
             <h2 class="section-title">Our Technology Stack</h2>
-            
-            <!-- Hardware Section -->
+
             <div class="tech-category">
                 <h3 class="category-title">Hardware Components</h3>
                 <div class="tech-grid">
-                    <!-- Smart Hall Card -->
                     <div class="tech-card">
                         <div class="tech-image">
                             <img src="https://i.postimg.cc/brdyjCMX/abstract-fantasy-landscape-with-color-year-purple-tones.jpg" alt="Smart Hall">
                         </div>
                         <a class="hall" href="./smaet-hall.html">
-                        <div class="tech-content">
-                            <h3>Smart Hall</h3>
-                            <p>Automated lecture hall with attendance tracking, environmental control, and safety features.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">ESP32-CAM</span>
-                                <span class="tech-tag">DC Motor </span>
-                                <span class="tech-tag">12V Fan</span>
-                                <span class="tech-tag">Flame Sensor</span>
-                                <span class="tech-tag">Smoke Sensor</span>
-                                <span class="tech-tag">Buzzer</span>
-                                <span class="tech-tag">IR Sensor</span>
-                                <span class="tech-tag">LED Strip</span>
-                                <span class="tech-tag">ESP32</span>
+                            <div class="tech-content">
+                                <h3>Smart Hall</h3>
+                                <p>Automated lecture hall with attendance tracking, environmental control, and safety features.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">ESP32-CAM</span>
+                                    <span class="tech-tag">DC Motor </span>
+                                    <span class="tech-tag">12V Fan</span>
+                                    <span class="tech-tag">Flame Sensor</span>
+                                    <span class="tech-tag">Smoke Sensor</span>
+                                    <span class="tech-tag">Buzzer</span>
+                                    <span class="tech-tag">IR Sensor</span>
+                                    <span class="tech-tag">LED Strip</span>
+                                    <span class="tech-tag">ESP32</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <a class="hall" href="./smart-garden.html">
+                        <div class="tech-card">
+                            <div class="tech-image">
+                                <img src="https://i.postimg.cc/G3zTw64f/view-robot-tending-maintaining-gardens.jpg" alt="Smart Garden">
+                            </div>
+                            <div class="tech-content">
+                                <h3>Smart Garden</h3>
+                                <p>Automated garden maintenance with soil moisture monitoring and climate control.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Soil Moisture Sensor</span>
+                                    <span class="tech-tag">Water Pump</span>
+                                    <span class="tech-tag">DHT11 Sensor</span>
+                                    <span class="tech-tag">12V Fan</span>
+                                    <span class="tech-tag">ESP32</span>
+                                </div>
                             </div>
                         </div>
                     </a>
-                    </div>
-                    
-                    <!-- Smart Garden Card -->
-                     <a  class="hall" href="./smart-garden.html">
-                    <div class="tech-card">
-                        <div class="tech-image">
-                            <img src="https://i.postimg.cc/G3zTw64f/view-robot-tending-maintaining-gardens.jpg" alt="Smart Garden">
-                        </div>
-                        <div class="tech-content">
-                            <h3>Smart Garden</h3>
-                            <p>Automated garden maintenance with soil moisture monitoring and climate control.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Soil Moisture Sensor</span>
-                                <span class="tech-tag">Water Pump</span>
-                                <span class="tech-tag">DHT11 Sensor</span>
-                                <span class="tech-tag">12V Fan</span>
-                                <span class="tech-tag">ESP32</span>
+                    <a class="hall" href="./smart-parking.html">
+                        <div class="tech-card">
+                            <div class="tech-image">
+                                <img src="https://i.postimg.cc/qqDPXpjS/full-car-parking-lot-mall.jpg" alt="Smart Parking">
+                            </div>
+                            <div class="tech-content">
+                                <h3>Smart Parking</h3>
+                                <p>Real-time parking space detection and management system.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">IR Sensors</span>
+                                    <span class="tech-tag">Green LEDs</span>
+                                    <span class="tech-tag">Red LEDs</span>
+                                    <span class="tech-tag">ESP32</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                    <!-- Smart Parking Card -->
-                     <a class="hall" href="./smart-parking.html">
-                    <div class="tech-card">
-                        <div class="tech-image">
-                            <img src="https://i.postimg.cc/qqDPXpjS/full-car-parking-lot-mall.jpg" alt="Smart Parking">
-                        </div>
-                        <div class="tech-content">
-                            <h3>Smart Parking</h3>
-                            <p>Real-time parking space detection and management system.</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">IR Sensors</span>
-                                <span class="tech-tag">Green LEDs</span>
-                                <span class="tech-tag">Red LEDs</span>
-                                <span class="tech-tag">ESP32</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
                 </div>
             </div>
-            
-            <!-- Software Section -->
-            
-        </div>
-    </section>
-    <footer>
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-id">
-                <img src="images/Icon[1].png" alt="My Academia Logo">
-            </div>
-            
-            <div class="footer-connect">
-                Every Corner,Every Details...In Your Control
-            </div>
-            
-            <div class="social-links">
-                <div class="connect-text">Connect with us</div>
-                <div class="social-icons">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <script>
-        // Simple animation for tech cards when they come into view
-        document.addEventListener('DOMContentLoaded', function() {
-            const techCards = document.querySelectorAll('.tech-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            techCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
-      <script src="./js/bootstrap.bundle.min.js"></script>
+            </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-id">
+                    <img src="images/Icon[1].png" alt="My Academia Logo">
+                </div>
+
+                <div class="footer-connect">
+                    Every Corner,Every Details...In Your Control
+                </div>
+
+                <div class="social-links">
+                    <div class="connect-text">Connect with us</div>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/all.min.js"></script>
-</body>
+    <script src="./js/project-components-script.js"></script> </body>
 </html>
