@@ -1,54 +1,32 @@
-:root{
+:root {
     --primary-blue: #0B2131;
     --secondary-blue: #09c;
     --accent-red: #DB2131;
     --text-dark: #333;
     --light-gray: #f8f9fa;
 }
-*{
+
+* {
     font-family: 'Rubik', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Add this for better responsive control */
+    box-sizing: border-box; /* Add this for better box model handling */
 }
-body{
+
+body {
     background-color: #f8f9fa;
 }
-.container{
-    width: 80%;
+
+.container {
+    width: 85%;
     margin: 0 auto;
 }
-/* ******************************** */
-/* Header adjustments for Bootstrap Navbar */
-header {
-    padding: 10px 0; /* Adjust padding as Bootstrap handles internal spacing */
-}
-.navbar-brand img {
-    width: 100%; /* Adjust as needed */
-    max-width: 2000px; /* Limit logo size */
-}
 
-/* Original nav hidden on small screens and styled by Bootstrap on larger screens */
-nav.navbar-nav {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    padding-left: 0;
-}
-
-nav.navbar-nav .nav-link {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-    padding: 0.5rem 1rem; /* Bootstrap default padding */
-}
-
-/* Home section with video background */
+/* --- Header & Hero Section --- */
 .home {
     position: relative;
     height: 100vh;
-    padding-top: 5px; /* Adjust if needed, header has its own padding now */
+    padding-top: 5px; /* Adjust padding-top to accommodate fixed navbar */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -73,36 +51,67 @@ nav.navbar-nav .nav-link {
     width: 100%;
     height: 100%;
     background: linear-gradient(
-        to bottom, 
-        rgba(0, 0, 0, 0.7) 0%, 
-        rgba(0, 0, 0, 0.3) 50%, 
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
         rgba(0, 0, 0, 0.7) 100%
     );
     z-index: 0;
 }
 
-/* Make sure content stays above video and gradient */
-header, section {
-    position: relative;
+
+/* Navbar adjustments */
+.navbar {
+    z-index: 100 ;
+    /* لون خلفية ثابت وفاتح */
+    background-color: transparent !important; /* لون أبيض فاتح مع شفافية خفيفة */
+    padding: 20px 0;
+    /* ألغينا transition: background-color 0.3s ease; لأنه ثابت الآن */
+    /* تأكد أنك تستخدم navbar-light في HTML حتى يتغير لون أيقونة التوجيه (toggler icon) تلقائيًا */
+}
+
+.navbar-brand img {
+    width: 100%; /* Adjust logo size */
+}
+
+.navbar-nav .nav-link {
+    /* لون الروابط داكن ليظهر على الخلفية الفاتحة */
+    color: white !important;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--secondary-blue) !important;
+}
+
+/* Ensure content stays below the fixed navbar */
+.home section {
+    flex-grow: 1; /* Allow section to take remaining space */
+    display: flex;
+    align-items: center;
+    position: relative; /* Ensure content is above video overlay */
     z-index: 1;
 }
 
 .front {
-    padding-top: 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 52px; /* Consider if this margin is still needed with new header */
-    flex-grow: 1; /* Allow content to take available space */
+    /* Removed padding-top and margin-top as section handles vertical alignment */
 }
 
-.discription{
-    width: 50%;
+.discription {
+    width: 100%; /* Make description take full width on smaller screens */
+    text-align: center; /* Center text on smaller screens */
 }
 
 .text h1 {
     color: white;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Adjusted for better responsiveness */
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -110,40 +119,12 @@ header, section {
 
 .text p {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Adjusted for better responsiveness */
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
-.butt .btn {
-    background-color: #09c;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 156, 204, 0.3);
-}
-
-.butt .btn:hover {
-    background-color: #0788b0;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 156, 204, 0.4);
-}
-
-.imgg{
-    width: 50%; /* This element is commented out in HTML but kept for reference */
-}
-
-.imgg img {
-    width: 100%;
-    height: auto;
-}
-
-/* Services Section */
+/* --- Services Section --- */
 .services-section {
     text-align: center;
     margin-bottom: 150px;
@@ -163,32 +144,30 @@ header, section {
     position: absolute;
     width: 50%;
     height: 3px;
-    background-color: #09c;
+    background-color: var(--secondary-blue);
     bottom: -10px;
     left: 25%;
 }
 
-.services-section p { /* Changed from .cards p to .services-section p */
+.services-section p { /* Corrected from .cards p to .services-section p */
     color: #6c757d;
     font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto 40px;
 }
 
-/* Services Grid */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
     margin-top: 40px;
-    justify-items: center; /* Center items in the grid */
 }
 
 .card1 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Stack icon and text */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the card */
 }
 
 .icon1 {
@@ -204,11 +183,11 @@ header, section {
     height: 200px;
     width: 200px;
     position: relative;
-    font-size: 80px;  
+    font-size: 80px;
     color: #06334d;
     border-width: 0px 5px 5px 0px;
     border-style: solid;
-    border-color: #0B2131;
+    border-color: var(--primary-blue);
 }
 
 .icon1:hover {
@@ -218,7 +197,7 @@ header, section {
 
 .icon1 i {
     font-size: 4rem;
-    color: #09c;
+    color: var(--secondary-blue);
     margin-bottom: 20px;
     width: 100%;
     height: 100%;
@@ -227,18 +206,15 @@ header, section {
     align-items: center;
 }
 
-.card1 h3{
-    font-size: 25px;
-    padding-top: 20px;
+.card1 h3 {
     color: #06334d;
+    font-size: 1.5rem; /* Adjusted for consistency */
+    margin-top: 15px; /* Spacing between icon and title */
+    padding-right: 0; /* Removed this, as content is centered now */
+    padding-top: 0; /* Removed this */
 }
 
-/* Smart Solutions Section */
-.smart-solutions {
-    padding: 80px 0;
-    background-color: var(--light-gray);
-}
-
+/* --- Smart Solutions Section --- */
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -246,7 +222,7 @@ header, section {
 
 .section-header h1 {
     font-size: 2.8rem;
-    color: var(--primary-blue); /* Used var instead of directly #0B2131 */
+    color: var(--primary-blue); /* Corrected from --primary */
     margin-bottom: 20px;
 }
 
@@ -262,8 +238,8 @@ header, section {
     background: white;
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid #09c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--secondary-blue); /* Used CSS variable */
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -271,7 +247,7 @@ header, section {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .feature-card::before {
@@ -281,19 +257,19 @@ header, section {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg,var(--primary-blue) ,var(--secondary-blue));
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); /* Used CSS variables */
 }
 
 .feature-number {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--secondary-blue);
+    color: var(--secondary-blue); /* Used CSS variable */
     margin-bottom: 15px;
 }
 
 .feature-title {
     font-size: 1.8rem;
-    color: var(--primary-blue);
+    color: var(--primary-blue); /* Used CSS variable */
     margin-bottom: 15px;
     position: relative;
     padding-bottom: 10px;
@@ -306,7 +282,7 @@ header, section {
     left: 0;
     width: 50px;
     height: 2px;
-    background: var(--secondary-blue);
+    background: var(--secondary-blue); /* Used CSS variable */
 }
 
 .feature-desc {
@@ -332,14 +308,14 @@ header, section {
     font-weight: 900;
     position: absolute;
     left: 0;
-    color: var(--secondary-blue);
+    color: var(--secondary-blue); /* Used CSS variable */
 }
 
 .feature-list li strong {
-    color:var(--primary-blue);
+    color: var(--primary-blue); /* Used CSS variable */
 }
 
-/* Main Services Section - نفس الهيكل مع تعديل التسميات */
+/* --- More About Our Services Section --- */
 .services-overview-section {
     background-color: #fff;
     padding: 80px 0;
@@ -373,7 +349,6 @@ header, section {
     left: 25%;
 }
 
-/* Process Steps - نفس التصميم مع تسميات واضحة */
 .services-workflow {
     display: flex;
     justify-content: space-between;
@@ -388,14 +363,14 @@ header, section {
     background: white;
     border-radius: 10px;
     padding: 40px 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 .workflow-step:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .step-badge {
@@ -422,7 +397,6 @@ header, section {
     font-size: 1.1rem;
 }
 
-/* CTA Button - نفس التصميم */
 .download-cta {
     text-align: center;
     padding: 40px;
@@ -446,27 +420,27 @@ header, section {
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .download-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background: var(--secondary-blue);
     color: white;
 }
 
-/* Header */
+/* --- Team Section --- */
 .team-header {
     text-align: center;
     margin-bottom: 60px;
-    padding-top: 60px;     
+    padding-top: 60px;
     padding-bottom: 50px;
 }
 
 .team-header h1 {
     font-size: 2.8rem;
-    color: #0B2131;
+    color: var(--primary-blue);
     margin-bottom: 20px;
 }
 
@@ -477,7 +451,6 @@ header, section {
     margin: 0 auto;
 }
 
-/* Team Grid */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -489,7 +462,7 @@ header, section {
     background: white;
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     text-align: center;
     position: relative;
@@ -498,7 +471,7 @@ header, section {
 
 .team-member:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .member-image {
@@ -507,17 +480,17 @@ header, section {
     border-radius: 50%;
     margin: 0 auto 20px;
     object-fit: cover;
-    border: 3px solid #09c;
+    border: 3px solid var(--secondary-blue);
 }
 
 .team-member h2 {
     font-size: 1.8rem;
-    color: #0B2131;
+    color: var(--primary-blue);
     margin-bottom: 5px;
 }
 
 .member-role {
-    color: #09c;
+    color: var(--secondary-blue);
     font-weight: 600;
     margin-bottom: 20px;
     font-size: 1.1rem;
@@ -528,7 +501,7 @@ header, section {
     font-size: 1rem;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     background-color: var(--primary-blue);
     color: white;
@@ -573,7 +546,7 @@ footer {
 }
 
 .connect-text {
-   text-align: center;
+    text-align: center;
     font-size: 20px;
     margin-bottom: 10px;
     color: white;
@@ -591,7 +564,7 @@ footer {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -605,331 +578,180 @@ footer {
     transform: translateY(-3px);
 }
 
-/* --- Media Queries for Responsiveness --- */
 
-/* General for smaller screens */
-@media (max-width: 992px) {
-    .container {
-        width: 90%; /* Increase container width for more space on tablets */
-    }
-
-    /* Header */
-    header .container {
-        flex-wrap: wrap;
-    }
-    .navbar-brand {
-        margin-right: auto; /* Push toggler to the right */
-    }
-    .navbar-toggler {
-        display: block; /* Show hamburger icon */
-    }
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
     .navbar-collapse {
-        width: 100%;
-        text-align: center;
-    }
-    nav.navbar-nav {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: center;
-        padding-top: 15px;
-    }
-    nav.navbar-nav .nav-link {
-        margin: 10px 0; /* Add vertical spacing */
+        background-color: var(--primary-blue); /* Background for mobile menu */
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
     }
 
-    /* Home Section */
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-brand img {
+        width: 100%; 
+    }
+
     .front {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 80px; /* Adjust padding for smaller screens */
-    }
-    .discription {
-        width: 90%; /* Take more width on small screens */
-    }
-    .text h1 {
-        font-size: 2rem; /* Smaller heading */
-    }
-    .text p {
-        font-size: 1rem; /* Smaller paragraph text */
+        flex-direction: column; /* Stack elements vertically */
+        padding-top: 80px; /* Adjust for navbar */
     }
 
-    /* Services Section */
-    .services-section h2 {
+    .discription {
+        width: 90%; /* Adjust width for smaller screens */
+        text-align: center;
+    }
+
+    .text h1 {
         font-size: 2rem;
     }
-    .cards {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust card size */
-        justify-items: center;
-    }
-    .icon1 {
-        width: 180px;
-        height: 180px;
-        padding: 30px;
-    }
-    .icon1 i {
-        font-size: 3.5rem;
-    }
-    .card1 h3 {
-        font-size: 22px;
+
+    .text p {
+        font-size: 1rem;
     }
 
-    /* Smart Solutions */
-    .section-header h1 {
-        font-size: 2.2rem;
-    }
-    .features-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .feature-card {
-        padding: 25px;
-    }
-    .feature-title {
-        font-size: 1.6rem;
-    }
-
-    /* More About Our Services */
-    .section-title h1 {
-        font-size: 2.2rem;
-    }
-    .services-workflow {
-        flex-direction: column; /* Stack workflow steps vertically */
-        align-items: center;
-    }
-    .workflow-step {
-        min-width: 90%;
-        margin-bottom: 20px;
-    }
-
-    /* Team Section */
-    .team-header h1 {
-        font-size: 2.2rem;
-    }
-    .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .imgg {
+        display: none; /* Hide image on smaller screens if it's not crucial */
     }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
     .container {
-        width: 95%; /* Even wider container on smaller mobiles */
-    }
-    /* Home Section */
-    .front {
-        padding-top: 60px;
-    }
-    .text h1 {
-        font-size: 1.8rem;
-    }
-    .text p {
-        font-size: 0.95rem;
+        width: 90%;
     }
 
-    /* Services Section */
-    .services-section h2 {
-        font-size: 1.8rem;
+    .services-section h2,
+    .section-header h1,
+    .section-title h1,
+    .team-header h1 {
+        font-size: 2rem;
     }
+
     .services-section p {
         font-size: 1rem;
     }
+
     .cards {
-        grid-template-columns: 1fr; /* Stack cards on top of each other */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
     }
+
     .icon1 {
         width: 150px;
         height: 150px;
-        padding: 20px;
+        padding: 25px;
     }
+
     .icon1 i {
         font-size: 3rem;
     }
+
     .card1 h3 {
-        font-size: 20px;
+        font-size: 1.3rem;
     }
 
-    /* Smart Solutions */
-    .section-header h1 {
-        font-size: 2rem;
-    }
     .features-grid {
-        grid-template-columns: 1fr; /* Stack features vertically */
-    }
-    .feature-card {
-        padding: 20px;
-    }
-    .feature-title {
-        font-size: 1.4rem;
-    }
-    .feature-desc, .feature-list li {
-        font-size: 0.9rem;
+        grid-template-columns: 1fr; /* Single column layout */
     }
 
-    /* More About Our Services */
-    .section-title h1 {
-        font-size: 2rem;
+    .workflow-step {
+        min-width: 100%;
+        padding: 30px 20px;
     }
-    .workflow-step h2 {
-        font-size: 1.6rem;
-    }
-    .workflow-step p {
-        font-size: 1rem;
-    }
+
     .download-cta h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
+
     .download-button {
         padding: 12px 30px;
-        font-size: 1.1rem;
-    }
-
-    /* Team Section */
-    .team-header h1 {
-        font-size: 2rem;
-    }
-    .team-header p {
         font-size: 1rem;
     }
+
     .team-grid {
-        grid-template-columns: 1fr; /* Stack team members vertically */
-    }
-    .team-member {
-        padding: 20px;
-    }
-    .member-image {
-        width: 100px;
-        height: 100px;
-    }
-    .team-member h2 {
-        font-size: 1.6rem;
-    }
-    .member-role {
-        font-size: 1rem;
-    }
-    .member-bio {
-        font-size: 0.9rem;
+        grid-template-columns: 1fr; /* Single column for team members */
     }
 
-    /* Footer */
     .footer-content {
         flex-direction: column;
-        align-items: center;
-    }
-    .footer-id, .footer-connect, .social-links {
-        margin-bottom: 20px;
         text-align: center;
     }
+
+    .footer-id,
+    .footer-connect,
+    .social-links {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
     .social-icons {
         justify-content: center;
     }
+
     .footer-connect {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        padding: 0;
     }
 }
 
-@media (max-width: 480px) {
-    .container {
-        width: 98%;
-    }
-    /* Home Section */
-    .front {
-        padding-top: 40px;
-    }
-    .text h1 {
-        font-size: 1.5rem;
-    }
-    .text p {
-        font-size: 0.85rem;
+@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+    header {
+        padding: 10px 20px;
     }
 
-    /* Services Section */
-    .services-section h2 {
-        font-size: 1.5rem;
+    .navbar-brand img {
+        width: 200px;
     }
+
+    .text h1 {
+        font-size: 1.8rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    .butt .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .services-section h2,
+    .section-header h1,
+    .section-title h1,
+    .team-header h1 {
+        font-size: 1.6rem;
+    }
+
     .services-section p {
         font-size: 0.9rem;
     }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
     .icon1 {
         width: 120px;
         height: 120px;
-        padding: 15px;
+        padding: 20px;
     }
+
     .icon1 i {
         font-size: 2.5rem;
     }
+
     .card1 h3 {
-        font-size: 18px;
-    }
-
-    /* Smart Solutions */
-    .section-header h1 {
-        font-size: 1.7rem;
-    }
-    .feature-card {
-        padding: 15px;
-    }
-    .feature-title {
-        font-size: 1.2rem;
-    }
-    .feature-desc, .feature-list li {
-        font-size: 0.85rem;
-    }
-
-    /* More About Our Services */
-    .section-title h1 {
-        font-size: 1.7rem;
-    }
-    .workflow-step {
-        padding: 25px 15px;
-    }
-    .step-badge {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        font-size: 1.5rem;
-    }
-    .workflow-step h2 {
-        font-size: 1.4rem;
-    }
-    .workflow-step p {
-        font-size: 0.9rem;
-    }
-    .download-cta h2 {
-        font-size: 1.4rem;
-    }
-    .download-button {
-        padding: 10px 25px;
-        font-size: 1rem;
-    }
-
-    /* Team Section */
-    .team-header h1 {
-        font-size: 1.7rem;
-    }
-    .member-image {
-        width: 80px;
-        height: 80px;
-    }
-    .team-member h2 {
-        font-size: 1.4rem;
-    }
-    .member-role {
-        font-size: 0.9rem;
-    }
-    .member-bio {
-        font-size: 0.8rem;
-    }
-
-    /* Footer */
-    .footer-id img {
-        max-width: 80%;
-    }
-    .footer-connect {
-        font-size: 1rem;
-    }
-    .connect-text {
-        font-size: 16px;
-    }
-    .social-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
