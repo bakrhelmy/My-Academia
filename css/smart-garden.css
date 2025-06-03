@@ -69,10 +69,10 @@ body {
 }
 
 /* Add a background to the navbar when scrolled (handled by JS) */
-.navbar.scrolled {
-    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll, using primary-blue base */
-    padding: 10px 0; /* Smaller padding when scrolled */
-}
+/* .navbar.scrolled {
+    background-color: rgba(11, 33, 49, 0.95) !important;    
+      padding: 10px 0; 
+} */
 
 .navbar-brand img {
     width: 100%; /* Adjust logo size for desktop */
