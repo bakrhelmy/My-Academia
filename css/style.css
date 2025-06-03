@@ -1,15 +1,15 @@
 :root{
-          --primary-blue: #0B2131;
-            --secondary-blue: #09c;
-            --accent-red: #DB2131;
-            --text-dark: #333;
-            --light-gray: #f8f9fa;
+    --primary-blue: #0B2131;
+    --secondary-blue: #09c;
+    --accent-red: #DB2131;
+    --text-dark: #333;
+    --light-gray: #f8f9fa;
 }
 *{
     font-family: 'Rubik', sans-serif;
     padding: 0;
     margin: 0;
-
+    box-sizing: border-box; /* Add this for better responsive control */
 }
 body{
     background-color: #f8f9fa;
@@ -19,20 +19,39 @@ body{
     margin: 0 auto;
 }
 /* ******************************** */
+/* Header adjustments for Bootstrap Navbar */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    /* background-color: #1A4058; */
+    padding: 10px 0; /* Adjust padding as Bootstrap handles internal spacing */
 }
-.logo img {
-    width: 80%;
-}.home {
+.navbar-brand img {
+    width: 100%; /* Adjust as needed */
+    max-width: 2000px; /* Limit logo size */
+}
+
+/* Original nav hidden on small screens and styled by Bootstrap on larger screens */
+nav.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav.navbar-nav .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    padding: 0.5rem 1rem; /* Bootstrap default padding */
+}
+
+/* Home section with video background */
+.home {
     position: relative;
     height: 100vh;
-    padding: 5px 0 10px 0;
+    padding-top: 5px; /* Adjust if needed, header has its own padding now */
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 #bgVideo {
@@ -67,33 +86,14 @@ header, section {
     position: relative;
     z-index: 1;
 }
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: white;
-}
-  
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-}
-
-/* .home {
-    height: 86vh;
-    background-color: #1A4058; 
-    padding: 5px 0 10px 0;
-} */
 
 .front {
     padding-top: 130px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 52px;
-
+    margin-top: 52px; /* Consider if this margin is still needed with new header */
+    flex-grow: 1; /* Allow content to take available space */
 }
 
 .discription{
@@ -101,7 +101,7 @@ nav a {
 }
 
 .text h1 {
-    color: white; /* Dark blue color */
+    color: white;
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
@@ -109,14 +109,14 @@ nav a {
 }
 
 .text p {
-    color: white; /* Gray color for paragraph */
+    color: white;
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
 .butt .btn {
-    background-color: #09c; /* Bright blue color */
+    background-color: #09c;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -129,13 +129,13 @@ nav a {
 }
 
 .butt .btn:hover {
-    background-color: #0788b0; /* Slightly darker blue on hover */
+    background-color: #0788b0;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 156, 204, 0.4);
 }
 
 .imgg{
-    width: 50%;
+    width: 50%; /* This element is commented out in HTML but kept for reference */
 }
 
 .imgg img {
@@ -143,19 +143,11 @@ nav a {
     height: auto;
 }
 
-
-.menu-bar {
-    color: white;
-    font-size: 24px;
-    font-weight: 800;
-    display: none;
-}
 /* Services Section */
 .services-section {
     text-align: center;
     margin-bottom: 150px;
     margin-top: 150px;
-    
 }
 
 .services-section h2 {
@@ -176,7 +168,7 @@ nav a {
     left: 25%;
 }
 
-.cards p {
+.services-section p { /* Changed from .cards p to .services-section p */
     color: #6c757d;
     font-size: 1.1rem;
     max-width: 700px;
@@ -189,13 +181,15 @@ nav a {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    justify-items: center; /* Center items in the grid */
 }
-/* 
-.crd {
+
+.card1 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-} */
+    text-align: center;
+}
 
 .icon1 {
     background: #ffffff;
@@ -203,7 +197,6 @@ nav a {
     padding: 40px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,16 +204,11 @@ nav a {
     height: 200px;
     width: 200px;
     position: relative;
-    font-size: 80px; 
+    font-size: 80px;  
     color: #06334d;
-    /* border: #000000 2px solid ; */
     border-width: 0px 5px 5px 0px;
-
-border-style: solid;
-
-border-color: #0B2131;
-
-
+    border-style: solid;
+    border-color: #0B2131;
 }
 
 .icon1:hover {
@@ -239,72 +227,17 @@ border-color: #0B2131;
     align-items: center;
 }
 
-.icon1 h3 {
-    color: #06334d;
-    font-size: 1.5rem;
-    margin-top: 15px;
-
-}
 .card1 h3{
     font-size: 25px;
-    padding-right: 65px;
     padding-top: 20px;
-
+    color: #06334d;
 }
 
-@media (max-width: 768px) {
-    .services-section h2 {
-        font-size: 2rem;
-    }
-
-    .cards {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 20px;
-    }
-
-    .icon1 {
-        width: 150px;
-        height: 150px;
-        padding: 20px;
-    }
-
-    .icon1 i {
-        font-size: 3rem;
-    }
-
-    .card1 h3 {
-        font-size: 20px;
-        padding-right: 0;
-        padding-top: 10px;
-    }
+/* Smart Solutions Section */
+.smart-solutions {
+    padding: 80px 0;
+    background-color: var(--light-gray);
 }
-
-@media (max-width: 480px) {
-    .services-section h2 {
-        font-size: 1.7rem;
-    }
-
-    .services-section p {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    .icon1 {
-        width: 120px;
-        height: 120px;
-        padding: 15px;
-    }
-
-    .icon1 i {
-        font-size: 2.5rem;
-    }
-
-    .card1 h3 {
-        font-size: 18px;
-        padding-top: 8px;
-    }
-}
-
 
 .section-header {
     text-align: center;
@@ -313,7 +246,7 @@ border-color: #0B2131;
 
 .section-header h1 {
     font-size: 2.8rem;
-    color: var(--primary);
+    color: var(--primary-blue); /* Used var instead of directly #0B2131 */
     margin-bottom: 20px;
 }
 
@@ -323,7 +256,6 @@ border-color: #0B2131;
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     gap: 30px;
     padding-bottom: 60px;
-
 }
 
 .feature-card {
@@ -349,19 +281,19 @@ border-color: #0B2131;
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg,#0B2131 ,#09c);
+    background: linear-gradient(90deg,var(--primary-blue) ,var(--secondary-blue));
 }
 
 .feature-number {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #09c;
+    color: var(--secondary-blue);
     margin-bottom: 15px;
 }
 
 .feature-title {
     font-size: 1.8rem;
-    color: #0B2131;
+    color: var(--primary-blue);
     margin-bottom: 15px;
     position: relative;
     padding-bottom: 10px;
@@ -374,7 +306,7 @@ border-color: #0B2131;
     left: 0;
     width: 50px;
     height: 2px;
-    background: #09c;
+    background: var(--secondary-blue);
 }
 
 .feature-desc {
@@ -400,28 +332,13 @@ border-color: #0B2131;
     font-weight: 900;
     position: absolute;
     left: 0;
-    color: #09c;
+    color: var(--secondary-blue);
 }
 
 .feature-list li strong {
-    color:#0B2131;
+    color:var(--primary-blue);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 40px 0;
-    }
-    
-    .section-header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .feature-card {
-        padding: 25px;
-    }
-}
 /* Main Services Section - نفس الهيكل مع تعديل التسميات */
 .services-overview-section {
     background-color: #fff;
@@ -539,31 +456,12 @@ border-color: #0B2131;
     color: white;
 }
 
-/* Responsive - نفس التعديلات */
-@media (max-width: 768px) {
-    .services-container {
-        width: 90%;
-        padding: 60px 0;
-    }
-    
-    .section-title h1 {
-        font-size: 2.2rem;
-    }
-    
-    .workflow-step {
-        min-width: 100%;
-    }
-}
-
-
 /* Header */
 .team-header {
     text-align: center;
     margin-bottom: 60px;
-    padding-top: 60px;   
+    padding-top: 60px;     
     padding-bottom: 50px;
-
-
 }
 
 .team-header h1 {
@@ -630,23 +528,9 @@ border-color: #0B2131;
     font-size: 1rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-    
-    .team-header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-  footer {
-    background-color: #0B2131;
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
     color: white;
     padding: 60px 0 30px;
 }
@@ -700,7 +584,7 @@ border-color: #0B2131;
     display: flex;
     justify-content: flex-end;
     gap: 15px;
-    padding-top: 10px   ;
+    padding-top: 10px;
 }
 
 .social-link {
@@ -717,30 +601,335 @@ border-color: #0B2131;
 }
 
 .social-link:hover {
-    background-color: #09c;
+    background-color: var(--secondary-blue);
     transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+/* --- Media Queries for Responsiveness --- */
+
+/* General for smaller screens */
+@media (max-width: 992px) {
+    .container {
+        width: 90%; /* Increase container width for more space on tablets */
     }
-    
-    .footer-id,
-    .footer-connect,
-    .social-links {
+
+    /* Header */
+    header .container {
+        flex-wrap: wrap;
+    }
+    .navbar-brand {
+        margin-right: auto; /* Push toggler to the right */
+    }
+    .navbar-toggler {
+        display: block; /* Show hamburger icon */
+    }
+    .navbar-collapse {
         width: 100%;
         text-align: center;
+    }
+    nav.navbar-nav {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center;
+        padding-top: 15px;
+    }
+    nav.navbar-nav .nav-link {
+        margin: 10px 0; /* Add vertical spacing */
+    }
+
+    /* Home Section */
+    .front {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 80px; /* Adjust padding for smaller screens */
+    }
+    .discription {
+        width: 90%; /* Take more width on small screens */
+    }
+    .text h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+    .text p {
+        font-size: 1rem; /* Smaller paragraph text */
+    }
+
+    /* Services Section */
+    .services-section h2 {
+        font-size: 2rem;
+    }
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust card size */
+        justify-items: center;
+    }
+    .icon1 {
+        width: 180px;
+        height: 180px;
+        padding: 30px;
+    }
+    .icon1 i {
+        font-size: 3.5rem;
+    }
+    .card1 h3 {
+        font-size: 22px;
+    }
+
+    /* Smart Solutions */
+    .section-header h1 {
+        font-size: 2.2rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .feature-card {
+        padding: 25px;
+    }
+    .feature-title {
+        font-size: 1.6rem;
+    }
+
+    /* More About Our Services */
+    .section-title h1 {
+        font-size: 2.2rem;
+    }
+    .services-workflow {
+        flex-direction: column; /* Stack workflow steps vertically */
+        align-items: center;
+    }
+    .workflow-step {
+        min-width: 90%;
         margin-bottom: 20px;
     }
-    
+
+    /* Team Section */
+    .team-header h1 {
+        font-size: 2.2rem;
+    }
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Even wider container on smaller mobiles */
+    }
+    /* Home Section */
+    .front {
+        padding-top: 60px;
+    }
+    .text h1 {
+        font-size: 1.8rem;
+    }
+    .text p {
+        font-size: 0.95rem;
+    }
+
+    /* Services Section */
+    .services-section h2 {
+        font-size: 1.8rem;
+    }
+    .services-section p {
+        font-size: 1rem;
+    }
+    .cards {
+        grid-template-columns: 1fr; /* Stack cards on top of each other */
+    }
+    .icon1 {
+        width: 150px;
+        height: 150px;
+        padding: 20px;
+    }
+    .icon1 i {
+        font-size: 3rem;
+    }
+    .card1 h3 {
+        font-size: 20px;
+    }
+
+    /* Smart Solutions */
+    .section-header h1 {
+        font-size: 2rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Stack features vertically */
+    }
+    .feature-card {
+        padding: 20px;
+    }
+    .feature-title {
+        font-size: 1.4rem;
+    }
+    .feature-desc, .feature-list li {
+        font-size: 0.9rem;
+    }
+
+    /* More About Our Services */
+    .section-title h1 {
+        font-size: 2rem;
+    }
+    .workflow-step h2 {
+        font-size: 1.6rem;
+    }
+    .workflow-step p {
+        font-size: 1rem;
+    }
+    .download-cta h2 {
+        font-size: 1.6rem;
+    }
+    .download-button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+
+    /* Team Section */
+    .team-header h1 {
+        font-size: 2rem;
+    }
+    .team-header p {
+        font-size: 1rem;
+    }
+    .team-grid {
+        grid-template-columns: 1fr; /* Stack team members vertically */
+    }
+    .team-member {
+        padding: 20px;
+    }
+    .member-image {
+        width: 100px;
+        height: 100px;
+    }
+    .team-member h2 {
+        font-size: 1.6rem;
+    }
+    .member-role {
+        font-size: 1rem;
+    }
+    .member-bio {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-id, .footer-connect, .social-links {
+        margin-bottom: 20px;
+        text-align: center;
+    }
     .social-icons {
         justify-content: center;
     }
-    
     .footer-connect {
-        font-size: 1.3rem;
-        padding: 0;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 98%;
+    }
+    /* Home Section */
+    .front {
+        padding-top: 40px;
+    }
+    .text h1 {
+        font-size: 1.5rem;
+    }
+    .text p {
+        font-size: 0.85rem;
+    }
+
+    /* Services Section */
+    .services-section h2 {
+        font-size: 1.5rem;
+    }
+    .services-section p {
+        font-size: 0.9rem;
+    }
+    .icon1 {
+        width: 120px;
+        height: 120px;
+        padding: 15px;
+    }
+    .icon1 i {
+        font-size: 2.5rem;
+    }
+    .card1 h3 {
+        font-size: 18px;
+    }
+
+    /* Smart Solutions */
+    .section-header h1 {
+        font-size: 1.7rem;
+    }
+    .feature-card {
+        padding: 15px;
+    }
+    .feature-title {
+        font-size: 1.2rem;
+    }
+    .feature-desc, .feature-list li {
+        font-size: 0.85rem;
+    }
+
+    /* More About Our Services */
+    .section-title h1 {
+        font-size: 1.7rem;
+    }
+    .workflow-step {
+        padding: 25px 15px;
+    }
+    .step-badge {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.5rem;
+    }
+    .workflow-step h2 {
+        font-size: 1.4rem;
+    }
+    .workflow-step p {
+        font-size: 0.9rem;
+    }
+    .download-cta h2 {
+        font-size: 1.4rem;
+    }
+    .download-button {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+
+    /* Team Section */
+    .team-header h1 {
+        font-size: 1.7rem;
+    }
+    .member-image {
+        width: 80px;
+        height: 80px;
+    }
+    .team-member h2 {
+        font-size: 1.4rem;
+    }
+    .member-role {
+        font-size: 0.9rem;
+    }
+    .member-bio {
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    .footer-id img {
+        max-width: 80%;
+    }
+    .footer-connect {
+        font-size: 1rem;
+    }
+    .connect-text {
+        font-size: 16px;
+    }
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
