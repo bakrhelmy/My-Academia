@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Navbar background change on scroll
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) { // Adjust this value as needed
-            navbar.classList.add('scrolled'); // Add 'scrolled' class
+        if (window.scrollY > 50) { 
+            navbar.classList.add('scrolled'); 
         } else {
-            navbar.classList.remove('scrolled'); // Remove 'scrolled' class
+            navbar.classList.remove('scrolled'); 
         }
     });
 
-    // No specific "animate on scroll" elements or smooth scrolling defined in your smart-hall.html
-    // If you add .animate-on-scroll classes to elements, you can use the IntersectionObserver logic from previous pages here.
 });

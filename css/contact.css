@@ -1,43 +1,39 @@
 :root {
-    --primary-blue: #0B2131; /* Your existing primary color */
-    --secondary-blue: #09c; /* Your existing secondary color */
+    --primary-blue: #0B2131;
+    --secondary-blue: #09c;
     --accent-red: #DB2131;
     --text-dark: #333;
     --light-gray: #f8f9fa;
-
-    /* Original variables from inline style, adapted for consistency */
-    --primary-theme: #3498db; /* Specific blue for buttons/links */
-    --secondary-theme: #2c3e50; /* Specific dark gray/blue for text/navbar */
-    --accent-theme: #e74c3c; /* Specific red */
-    --light-theme: #f8f9fa; /* Specific light background */
-    --dark-theme: #212529; /* Specific dark text */
+    --primary-theme: #3498db;
+    --secondary-theme: #2c3e50;
+    --accent-theme: #e74c3c;
+    --light-theme: #f8f9fa;
+    --dark-theme: #212529;
 }
 
 * {
-    font-family: 'Rubik', sans-serif; /* Your preferred font */
+    font-family: 'Rubik', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Essential for responsive design */
+    box-sizing: border-box;
 }
 
 body {
     line-height: 1.6;
-    color: var(--dark-theme); /* Using specific dark theme color */
-    background-color: var(--light-theme); /* Using specific light theme color */
+    color: var(--dark-theme);
+    background-color: var(--light-theme);
 }
 
 .container {
-    width: 85%; /* Consistent container width */
+    width: 85%;
     margin: 0 auto;
 }
 
-/* --- Header & Hero Section --- */
 .home {
-    /* Background image from your provided code */
     background: linear-gradient(rgba(0, 0, 0, 0.167), rgba(0, 0, 0, 0.153)), url('https://i.postimg.cc/gJKBrLV2/contact-us-communication-support-service-assistance-concept.jpg') no-repeat center center/cover;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed;
     height: 80vh;
-    padding-top: 5px; /* Initial padding, will be adjusted by fixed-top navbar */
+    padding-top: 5px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -45,34 +41,28 @@ body {
     align-items: center;
 }
 
-/* Ensure content stays above overlay */
-.home > header, .home > section {
+.home > header,
+.home > section {
     position: relative;
     z-index: 1;
     width: 100%;
 }
 
-/* Navbar adjustments for fixed-top */
 .navbar {
-    background-color: transparent !important; /* Start transparent */
+    background-color: transparent !important;
     padding: 20px 0;
-    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for both */
+    transition: background-color 0.3s ease, padding 0.3s ease;
     width: 100%;
-    z-index: 1030; /* Higher z-index for fixed navbar */
+    z-index: 1030;
 }
 
-/* Add a background to the navbar when scrolled (handled by JS) */
-.navbar.scrolled {
-    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll, using primary-blue base */
-    padding: 10px 0; /* Smaller padding when scrolled */
-}
 
 .navbar-brand img {
-    width: 100%; /* Adjust logo size for desktop */
+    width: 100%;
 }
 
 .navbar-nav .nav-link {
-    color: white !important; /* White links for dark navbar background */
+    color: white !important;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 500;
@@ -84,30 +74,29 @@ body {
     color: var(--secondary-blue) !important;
 }
 
-/* Hero Section Content */
 .home section {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    padding-top: 70px; /* Added padding to ensure content is below the fixed navbar initially */
+    padding-top: 70px;
 }
 
 .front {
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 .discription {
-    width: 80%; /* Adjusted width for better readability on desktop */
+    width: 80%;
     text-align: center;
-    padding-top: 0; /* Remove specific padding, let flexbox handle it */
+    padding-top: 0;
 }
 
 .text h1 {
     color: white;
-    font-size: 3rem; /* Adjusted for better readability */
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -123,9 +112,8 @@ body {
     margin-right: auto;
 }
 
-/* --- Contact Section --- */
 .section {
-    padding: 80px 0; /* Consistent section padding */
+    padding: 80px 0;
 }
 
 .section-title {
@@ -135,7 +123,7 @@ body {
 
 .section-title h2 {
     font-size: 2.5rem;
-    color: var(--primary-blue); /* Using your primary-blue */
+    color: var(--primary-blue);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -146,36 +134,34 @@ body {
     display: block;
     width: 80px;
     height: 4px;
-    background: var(--secondary-blue); /* Using your secondary-blue */
+    background: var(--secondary-blue);
     margin: 15px auto 0;
 }
 
 .section-title .lead {
-    color: var(--text-dark); /* Using your text-dark */
+    color: var(--text-dark);
     font-size: 1.1rem;
     max-width: 600px;
     margin: 10px auto 0;
 }
 
 .card {
-    border: none; /* Remove default Bootstrap card border */
+    border: none;
 }
 
-/* Bootstrap Button Styling */
 .btn-primary {
-    background-color: var(--secondary-blue) !important; /* Using your secondary-blue */
+    background-color: var(--secondary-blue) !important;
     border-color: var(--secondary-blue) !important;
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-blue) !important; /* Darker blue on hover */
+    background-color: var(--primary-blue) !important;
     border-color: var(--primary-blue) !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Animation on scroll for the card */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
@@ -187,7 +173,6 @@ body {
     transform: translateY(0);
 }
 
-/* --- Footer (Copied from previous response for consistency) --- */
 footer {
     background-color: var(--primary-blue);
     color: white;
@@ -263,14 +248,14 @@ footer {
     background-color: var(--secondary-blue);
     transform: translateY(-3px);
 }
-.diss{
+
+.diss {
     display: none;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint for navbar collapse */
+@media (max-width: 991.98px) {
     .navbar-collapse {
-        background-color: var(--primary-blue); /* Dark background for mobile menu */
+        background-color: var(--primary-blue);
         padding: 15px;
         border-radius: 5px;
         margin-top: 10px;
@@ -285,26 +270,25 @@ footer {
     }
 
     .navbar-brand img {
-        width: 100%; /* Smaller logo on mobile */
+        width: 100%;
     }
 
-    /* Hero section adjustments for smaller screens */
     .home {
-        height: auto; /* Allow height to adjust */
-        min-height: 50vh; /* Minimum height to keep hero visible */
+        height: auto;
+        min-height: 50vh;
     }
 
     .home section {
-        padding-top: 20px; /* Reduce padding as navbar is dark now */
-        padding-bottom: 40px; /* Add some bottom padding */
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
 
     .front {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column;
     }
 
     .discription {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%;
         text-align: center;
     }
 
@@ -315,12 +299,13 @@ footer {
     .text p {
         font-size: 1rem;
     }
- .diss{
+
+    .diss {
         display: block;
     }
-    /* Contact Section */
+
     .section {
-        padding: 60px 0; /* Slightly less padding on smaller screens */
+        padding: 60px 0;
     }
 
     .section-title h2 {
@@ -332,34 +317,35 @@ footer {
     }
 
     .card {
-        padding: 1rem !important; /* Adjust padding on card body for small screens */
+        padding: 1rem !important;
     }
 }
 
-
-@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+@media (max-width: 767.98px) {
     .container {
         width: 90%;
     }
-     .diss{
+
+    .diss {
         display: block;
     }
 
-    /* Hero Section */
     .home {
-        min-height: 40vh; /* Even smaller min-height */
+        min-height: 40vh;
     }
+
     .home section {
-        padding-top: 10px; /* Further adjust padding */
+        padding-top: 10px;
     }
+
     .text h1 {
         font-size: 1.8rem;
     }
+
     .text p {
         font-size: 0.9rem;
     }
 
-    /* Contact Section */
     .section-title h2 {
         font-size: 1.8rem;
     }
@@ -368,7 +354,6 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -392,17 +377,19 @@ footer {
     }
 }
 
-@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+@media (max-width: 575.98px) {
     .navbar-brand img {
-        width: 200px; /* Even smaller logo on very small screens */
+        width: 200px;
     }
 
     .text h1 {
         font-size: 1.5rem;
     }
-    .diss{
+
+    .diss {
         display: block;
     }
+
     .text p {
         font-size: 0.85rem;
     }
@@ -412,11 +399,11 @@ footer {
     }
 
     .card-body {
-        padding: 0.75rem !important; /* Even smaller padding on card body */
+        padding: 0.75rem !important;
     }
 
     .btn-lg {
-        padding: 0.75rem 1.5rem; /* Adjust button size */
+        padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
     }
 }

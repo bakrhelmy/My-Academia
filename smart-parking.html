@@ -52,7 +52,7 @@
                             <p>Discover the core hardware components that make our automated parking system efficient and user-friendly, providing real-time slot availability.</p>
                         </div>
                         <div class="butt">
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,13 +101,13 @@
                 </div>
                 <div class="component-content col-md-8 col-12">
                     <p>
-                        <strong>🔍 What it does:</strong> Detects the <strong>presence of cars</strong> in individual parking slots to support the smart parking system.<br><br>
+                        <strong>🔍 What it does:</strong> Detects the **presence of cars** in individual parking slots to support the smart parking system.<br><br>
 
                         <strong>⚙️ How it works:</strong><br>
-                        - Outputs a <strong>digital signal (HIGH/LOW)</strong> to the ESP32.<br>
-                        - When a car is detected (<strong>HIGH</strong>), the ESP32:<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;• Turns the <strong>red LED ON</strong> to indicate the slot is occupied.<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;• Sends a <strong>real-time update to Firebase</strong>.
+                        - Outputs a **digital signal (HIGH/LOW)** to the ESP32.<br>
+                        - When a car is detected (**HIGH**), the ESP32:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• Turns the **red LED ON** to indicate the slot is occupied.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• Sends a **real-time update to Firebase**.
                     </p>
                 </div>
             </div>
@@ -124,12 +124,12 @@
                 </div>
                 <div class="component-content col-md-8 col-12">
                     <p>
-                        <strong>🔍 What they do:</strong> Visually indicate the <strong>status of parking slots</strong> (available or occupied).<br><br>
+                        <strong>🔍 What they do:</strong> Visually indicate the **status of parking slots** (available or occupied).<br><br>
 
                         <strong>⚙️ How they work:</strong><br>
-                        - Connected to <strong>ESP32 digital pins</strong> (e.g., GPIO12 for red, GPIO13 for green).<br>
-                        - <strong>Green LED</strong> lights up when the slot is <strong>empty</strong>.<br>
-                        - <strong>Red LED</strong> lights up when the slot is <strong>occupied</strong>.
+                        - Connected to **ESP32 digital pins** (e.g., GPIO12 for red, GPIO13 for green).<br>
+                        - **Green LED** lights up when the slot is **empty**.<br>
+                        - **Red LED** lights up when the slot is **occupied**.
                     </p>
                 </div>
             </div>
@@ -147,21 +147,21 @@
                 </div>
                 <div class="component-content col-md-8 col-12">
                     <p>
-                        <strong>🔍 What it does:</strong> The <strong>ESP32 module</strong> serves as the <strong>central processing and communication unit</strong> for the smart parking system, collecting real-time sensor data, processing information, and controlling indicators.<br><br>
+                        <strong>🔍 What it does:</strong> The **ESP32 module** serves as the **central processing and communication unit** for the smart parking system, collecting real-time sensor data, processing information, and controlling indicators.<br><br>
 
                         <strong>Key Functions:</strong><br><br>
 
                         <strong>1. Sensor Interfacing</strong><br>
-                        <strong>🔍 What it does:</strong> Connects to various <strong>IR sensors</strong> to monitor parking slot occupancy.<br>
-                        <strong>⚙️ How it works:</strong> <br>GPIO pins read <strong>digital signals</strong> from IR sensors for each parking slot.<br><br>
+                        <strong>🔍 What it does:</strong> Connects to various **IR sensors** to monitor parking slot occupancy.<br>
+                        <strong>⚙️ How it works:</strong> <br>GPIO pins read **digital signals** from IR sensors for each parking slot.<br><br>
 
                         <strong>2. Data Processing</strong><br>
                         <strong>🔍 What it does:</strong> Analyzes incoming sensor data to determine slot availability and triggers indicator updates.<br>
                         <strong>⚙️ How it works:</strong> <br>Processes IR sensor readings to update the status of each parking slot (occupied/available).<br><br>
 
                         <strong>3. Wireless Communication</strong><br>
-                        <strong>🔍 What it does:</strong> Transmits parking data to <strong>Firebase</strong> and receives commands from the mobile app.<br>
-                        <strong>⚙️ How it works:</strong> <br>The built-in <strong>Wi-Fi module</strong> connects to a local network.<br>Uses <strong>HTTP/MQTT protocols</strong> to sync data with Firebase in real-time, allowing users to view parking maps via the mobile app.<br><br>
+                        <strong>🔍 What it does:</strong> Transmits parking data to **Firebase** and receives commands from the mobile app.<br>
+                        <strong>⚙️ How it works:</strong> <br>The built-in **Wi-Fi module** connects to a local network.<br>Uses **HTTP/MQTT protocols** to sync data with Firebase in real-time, allowing users to view parking maps via the mobile app.<br><br>
                     </p>
                 </div>
             </div>

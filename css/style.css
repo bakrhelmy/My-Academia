@@ -10,7 +10,7 @@
     font-family: 'Rubik', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Add this for better box model handling */
+    box-sizing: border-box;
 }
 
 body {
@@ -22,11 +22,10 @@ body {
     margin: 0 auto;
 }
 
-/* --- Header & Hero Section --- */
 .home {
     position: relative;
     height: 100vh;
-    padding-top: 5px; /* Adjust padding-top to accommodate fixed navbar */
+    padding-top: 5px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -42,7 +41,6 @@ body {
     z-index: -1;
 }
 
-/* Gradient overlay */
 .home::after {
     content: '';
     position: absolute;
@@ -59,23 +57,17 @@ body {
     z-index: 0;
 }
 
-
-/* Navbar adjustments */
 .navbar {
-    z-index: 100 ;
-    /* لون خلفية ثابت وفاتح */
-    background-color: transparent !important; /* لون أبيض فاتح مع شفافية خفيفة */
+    z-index: 100;
+    background-color: transparent !important;
     padding: 20px 0;
-    /* ألغينا transition: background-color 0.3s ease; لأنه ثابت الآن */
-    /* تأكد أنك تستخدم navbar-light في HTML حتى يتغير لون أيقونة التوجيه (toggler icon) تلقائيًا */
 }
 
 .navbar-brand img {
-    width: 100%; /* Adjust logo size */
+    width: 100%;
 }
 
 .navbar-nav .nav-link {
-    /* لون الروابط داكن ليظهر على الخلفية الفاتحة */
     color: white !important;
     text-decoration: none;
     margin: 0 15px;
@@ -88,12 +80,11 @@ body {
     color: var(--secondary-blue) !important;
 }
 
-/* Ensure content stays below the fixed navbar */
 .home section {
-    flex-grow: 1; /* Allow section to take remaining space */
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    position: relative; /* Ensure content is above video overlay */
+    position: relative;
     z-index: 1;
 }
 
@@ -101,17 +92,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Removed padding-top and margin-top as section handles vertical alignment */
 }
 
 .discription {
-    width: 100%; /* Make description take full width on smaller screens */
-    text-align: center; /* Center text on smaller screens */
+    width: 100%;
+    text-align: center;
 }
 
 .text h1 {
     color: white;
-    font-size: 3rem; /* Adjusted for better responsiveness */
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -119,12 +109,11 @@ body {
 
 .text p {
     color: white;
-    font-size: 1.2rem; /* Adjusted for better responsiveness */
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 30px;
 }
 
-/* --- Services Section --- */
 .services-section {
     text-align: center;
     margin-bottom: 150px;
@@ -149,7 +138,7 @@ body {
     left: 25%;
 }
 
-.services-section p { /* Corrected from .cards p to .services-section p */
+.services-section p {
     color: #6c757d;
     font-size: 1.1rem;
     max-width: 700px;
@@ -165,9 +154,9 @@ body {
 
 .card1 {
     display: flex;
-    flex-direction: column; /* Stack icon and text */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text within the card */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .icon1 {
@@ -208,13 +197,10 @@ body {
 
 .card1 h3 {
     color: #06334d;
-    font-size: 1.5rem; /* Adjusted for consistency */
-    margin-top: 15px; /* Spacing between icon and title */
-    padding-right: 0; /* Removed this, as content is centered now */
-    padding-top: 0; /* Removed this */
+    font-size: 1.5rem;
+    margin-top: 15px;
 }
 
-/* --- Smart Solutions Section --- */
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -222,11 +208,10 @@ body {
 
 .section-header h1 {
     font-size: 2.8rem;
-    color: var(--primary-blue); /* Corrected from --primary */
+    color: var(--primary-blue);
     margin-bottom: 20px;
 }
 
-/* Features Grid */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
@@ -239,7 +224,7 @@ body {
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--secondary-blue); /* Used CSS variable */
+    border-top: 4px solid var(--secondary-blue);
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -257,19 +242,19 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue)); /* Used CSS variables */
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
 }
 
 .feature-number {
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--secondary-blue); /* Used CSS variable */
+    color: var(--secondary-blue);
     margin-bottom: 15px;
 }
 
 .feature-title {
     font-size: 1.8rem;
-    color: var(--primary-blue); /* Used CSS variable */
+    color: var(--primary-blue);
     margin-bottom: 15px;
     position: relative;
     padding-bottom: 10px;
@@ -282,7 +267,7 @@ body {
     left: 0;
     width: 50px;
     height: 2px;
-    background: var(--secondary-blue); /* Used CSS variable */
+    background: var(--secondary-blue);
 }
 
 .feature-desc {
@@ -308,14 +293,13 @@ body {
     font-weight: 900;
     position: absolute;
     left: 0;
-    color: var(--secondary-blue); /* Used CSS variable */
+    color: var(--secondary-blue);
 }
 
 .feature-list li strong {
-    color: var(--primary-blue); /* Used CSS variable */
+    color: var(--primary-blue);
 }
 
-/* --- More About Our Services Section --- */
 .services-overview-section {
     background-color: #fff;
     padding: 80px 0;
@@ -430,7 +414,6 @@ body {
     color: white;
 }
 
-/* --- Team Section --- */
 .team-header {
     text-align: center;
     margin-bottom: 60px;
@@ -501,7 +484,6 @@ body {
     font-size: 1rem;
 }
 
-/* --- Footer --- */
 footer {
     background-color: var(--primary-blue);
     color: white;
@@ -578,11 +560,9 @@ footer {
     transform: translateY(-3px);
 }
 
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
+@media (max-width: 991.98px) {
     .navbar-collapse {
-        background-color: var(--primary-blue); /* Background for mobile menu */
+        background-color: var(--primary-blue);
         padding: 15px;
         border-radius: 5px;
         margin-top: 10px;
@@ -597,16 +577,16 @@ footer {
     }
 
     .navbar-brand img {
-        width: 100%; 
+        width: 100%;
     }
 
     .front {
-        flex-direction: column; /* Stack elements vertically */
-        padding-top: 80px; /* Adjust for navbar */
+        flex-direction: column;
+        padding-top: 80px;
     }
 
     .discription {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%;
         text-align: center;
     }
 
@@ -619,12 +599,11 @@ footer {
     }
 
     .imgg {
-        display: none; /* Hide image on smaller screens if it's not crucial */
+        display: none;
     }
 }
 
-
-@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+@media (max-width: 767.98px) {
     .container {
         width: 90%;
     }
@@ -660,7 +639,7 @@ footer {
     }
 
     .features-grid {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr;
     }
 
     .workflow-step {
@@ -678,7 +657,7 @@ footer {
     }
 
     .team-grid {
-        grid-template-columns: 1fr; /* Single column for team members */
+        grid-template-columns: 1fr;
     }
 
     .footer-content {
@@ -704,7 +683,7 @@ footer {
     }
 }
 
-@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+@media (max-width: 575.98px) {
     header {
         padding: 10px 20px;
     }

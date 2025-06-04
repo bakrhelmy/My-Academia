@@ -1,31 +1,25 @@
-/* Custom CSS Variables - Adjusted for consistency with your project */
 :root {
-    --primary-blue: #0B2131; /* Your primary dark blue */
-    --secondary-blue: #09c; /* Your secondary bright blue */
-    --accent-red: #DB2131; /* Your accent red */
+    --primary-blue: #0B2131;
+    --secondary-blue: #09c;
+    --accent-red: #DB2131;
     --text-dark: #333;
     --light-gray: #f8f9fa;
-
-    /* Mapping from original inline variables to your global variables where appropriate */
-    --primary-theme: var(--secondary-blue); /* #3498db, maps to your bright blue */
-    --secondary-theme: var(--primary-blue); /* #2c3e50, maps to your dark blue */
-    --accent-theme: var(--accent-red); /* #e74c3c, maps to your accent red */
-    --light-theme: var(--light-gray); /* #f8f9fa, maps to your light gray */
-    --dark-theme: var(--text-dark); /* #212529, maps to your general text dark */
-
-    /* Additional Bootstrap-like colors */
+    --primary-theme: var(--secondary-blue);
+    --secondary-theme: var(--primary-blue);
+    --accent-theme: var(--accent-red);
+    --light-theme: var(--light-gray);
+    --dark-theme: var(--text-dark);
     --success: #28a745;
     --danger: #dc3545;
     --warning: #ffc107;
     --info: #17a2b8;
 }
 
-/* Base Styles */
 * {
     font-family: 'Rubik', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Essential for responsive design */
+    box-sizing: border-box;
 }
 
 body {
@@ -37,11 +31,15 @@ body {
 .container {
     width: 85%;
     margin: 0 auto;
-    padding: 0 15px; /* Added horizontal padding for smaller screens */
+    padding: 0 15px;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-top: 0;
@@ -56,7 +54,6 @@ p {
     font-weight: 300;
 }
 
-/* Section Styles */
 .section {
     padding: 5rem 0;
     position: relative;
@@ -65,79 +62,75 @@ p {
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
-    position: relative; /* For underline */
+    position: relative;
 }
 
 .section-title h2 {
     font-size: 2.5rem;
     color: var(--secondary-theme);
     margin-bottom: 1rem;
-    display: inline-block; /* To make ::after work correctly */
+    display: inline-block;
 }
 
-.section-title h2::after { /* Underline for section titles */
+.section-title h2::after {
     content: '';
     display: block;
-    width: 80px; /* Length of the underline */
+    width: 80px;
     height: 4px;
-    background: var(--primary-theme); /* Color of the underline */
-    margin: 10px auto 0; /* Centered below title */
+    background: var(--primary-theme);
+    margin: 10px auto 0;
 }
 
 .section-title .lead {
-    color: var(--text-dark); /* Using your general text dark */
+    color: var(--text-dark);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .bg-light {
-    background-color: var(--light-theme) !important; /* Use theme variable */
+    background-color: var(--light-theme) !important;
 }
 
-/* --- Hero Section --- */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.281)),
-                url('https://i.postimg.cc/RCgJLCG6/4rr43r34r.png') /* Image from your code */
-                no-repeat center center/cover;
+        url('https://i.postimg.cc/RCgJLCG6/4rr43r34r.png') no-repeat center center/cover;
     background-attachment: fixed;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align header to top, content below */
+    justify-content: flex-start;
     color: white;
     position: relative;
-    padding-top: 5px; /* Initial padding, adjusted by fixed-top navbar */
+    padding-top: 5px;
 }
 
-/* Ensure content appears above overlay (from previous pages) */
-.hero > header, .hero-content {
+.hero > header,
+.hero-content {
     position: relative;
     z-index: 1;
     width: 100%;
 }
 
-/* Navbar adjustments for fixed-top */
-.navbar { /* This styles the Bootstrap navbar */
-    background-color: transparent !important; /* Start transparent */
+.navbar {
+    background-color: transparent !important;
     padding: 20px 0;
-    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for both */
+    transition: background-color 0.3s ease, padding 0.3s ease;
     width: 100%;
-    z-index: 1030; /* Higher z-index for fixed navbar */
+    z-index: 1030;
 }
 
-/* Add a background to the navbar when scrolled (handled by JS) */
 .navbar.scrolled {
-    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll, using primary-blue base */
-    padding: 10px 0; /* Smaller padding when scrolled */
+    background-color: rgba(11, 33, 49, 0.95) !important;
+    padding: 10px 0;
 }
 
-.navbar-brand img { /* Styles the logo within the Bootstrap navbar */
-    width: 100%; /* Adjust logo size for desktop */
+.navbar-brand img {
+    width: 100%;
 }
 
-.navbar-nav .nav-link { /* Styles links within the Bootstrap navbar */
-    color: white !important; /* White links for dark navbar background */
+.navbar-nav .nav-link {
+    color: white !important;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 500;
@@ -146,17 +139,17 @@ p {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: var(--secondary-blue) !important; /* Your bright blue for hover/active */
+    color: var(--secondary-blue) !important;
 }
 
-.hero-content { /* Styles the content of the hero section */
-    flex-grow: 1; /* Allows the content to fill remaining space */
+.hero-content {
+    flex-grow: 1;
     display: flex;
-    align-items: center; /* Vertically center content */
+    align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 2rem 0; /* Adjusted padding */
-    padding-top: 70px; /* Added padding to ensure content is below the fixed navbar */
+    padding: 2rem 0;
+    padding-top: 70px;
 }
 
 .hero-text {
@@ -165,28 +158,28 @@ p {
 }
 
 .hero-text h1 {
-    font-size: 3.2rem; /* Slightly larger heading for impact */
+    font-size: 3.2rem;
     margin-bottom: 1.5rem;
 }
 
 .hero-text p {
-    font-size: 1.3rem; /* Slightly larger paragraph */
+    font-size: 1.3rem;
     margin-bottom: 2rem;
 }
 
-/* Feature Cards */
 .features-section {
-    background-color: white; /* Make this section white */
+    background-color: white;
 }
+
 .feature-card {
     background-color: white;
     border-radius: 10px;
     padding: 2rem;
-    height: 100%; /* Ensure cards in a row have equal height */
+    height: 100%;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-top: 5px solid var(--primary-theme); /* Consistent accent line */
+    border-top: 5px solid var(--primary-theme);
 }
 
 .feature-card:hover {
@@ -196,12 +189,12 @@ p {
 
 .feature-icon {
     font-size: 3rem;
-    color: var(--primary-theme); /* Consistent primary color */
+    color: var(--primary-theme);
     margin-bottom: 1.5rem;
 }
 
 .feature-card h3 {
-    color: var(--secondary-theme); /* Consistent dark text */
+    color: var(--secondary-theme);
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
@@ -211,13 +204,12 @@ p {
     font-size: 0.95rem;
 }
 
-/* App Screens */
 .app-screen {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
-    margin-bottom: 2rem; /* Margin for when stacked on mobile */
+    margin-bottom: 2rem;
     max-width: 100%;
     height: auto;
 }
@@ -226,7 +218,6 @@ p {
     transform: scale(1.03);
 }
 
-/* Section specific styling for text next to images */
 #home-screen .col-lg-6:last-child h3,
 #attendance .col-lg-6:first-child h3,
 #garden .col-lg-6:last-child h3,
@@ -244,8 +235,6 @@ p {
     font-size: 1.1rem;
 }
 
-
-/* Tech Stack */
 .tech-stack-section {
     background-color: var(--light-theme);
 }
@@ -257,7 +246,7 @@ p {
     transition: transform 0.3s;
     background-color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    height: 100%; /* Ensure equal height */
+    height: 100%;
 }
 
 .tech-card:hover {
@@ -279,12 +268,11 @@ p {
 .tech-card p {
     color: var(--text-dark);
     font-size: 0.9rem;
-    margin-bottom: 0; /* Remove extra margin */
+    margin-bottom: 0;
 }
 
-/* Download Section */
 .download-section {
-    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); /* Using your primary blues */
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     color: white;
     text-align: center;
     padding: 4rem 0;
@@ -297,9 +285,9 @@ p {
 }
 
 .download-content h2 {
-    color: white; /* Override h2 default dark color */
-    font-size: 2.8rem; /* Use specific font size */
-    margin-bottom: 1.5rem; /* Adjust margin */
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .download-content p.lead {
@@ -319,7 +307,7 @@ p {
     display: inline-flex;
     align-items: center;
     background-color: white;
-    color: var(--primary-blue); /* Using your primary blue */
+    color: var(--primary-blue);
     padding: 0.8rem 2rem;
     border-radius: 30px;
     font-weight: bold;
@@ -330,8 +318,8 @@ p {
 .download-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--secondary-blue); /* Consistent hover color */
-    color: white; /* Keep text white on hover */
+    background-color: var(--secondary-blue);
+    color: white;
 }
 
 .qr-code {
@@ -340,7 +328,6 @@ p {
     margin: 0 auto;
 }
 
-/* Footer (Copied for consistency) */
 footer {
     background-color: var(--primary-blue);
     color: white;
@@ -360,17 +347,17 @@ footer {
     flex-wrap: wrap;
 }
 
-.footer-brand { /* Renamed from footer-id */
+.footer-brand {
     flex: 1;
     min-width: 150px;
 }
 
-.footer-brand img { /* Renamed from footer-id img */
+.footer-brand img {
     max-width: 100%;
     height: auto;
 }
 
-.footer-slogan { /* Renamed from footer-connect */
+.footer-slogan {
     flex: 2;
     text-align: center;
     font-size: 1.5rem;
@@ -378,13 +365,13 @@ footer {
     padding: 0 20px;
 }
 
-.footer-social { /* Renamed from social-links */
+.footer-social {
     flex: 1;
     min-width: 200px;
     text-align: center;
 }
 
-.social-title { /* Renamed from connect-text */
+.social-title {
     font-size: 1.25rem;
     margin-bottom: 10px;
     font-weight: 600;
@@ -410,11 +397,10 @@ footer {
 }
 
 .social-link:hover {
-    background-color: var(--secondary-blue); /* Using your secondary blue */
+    background-color: var(--secondary-blue);
     transform: translateY(-3px);
 }
 
-/* Animations */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
@@ -426,11 +412,9 @@ footer {
     transform: translateY(0);
 }
 
-
-/* --- Responsive Design --- */
-@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint for navbar collapse */
+@media (max-width: 991.98px) {
     .navbar-collapse {
-        background-color: var(--primary-blue); /* Dark background for mobile menu */
+        background-color: var(--primary-blue);
         padding: 15px;
         border-radius: 5px;
         margin-top: 10px;
@@ -445,76 +429,85 @@ footer {
     }
 
     .navbar-brand img {
-        width: 100%; /* Smaller logo on mobile */
+        width: 100%;
     }
 
-    /* Hero section adjustments */
     .hero {
-        min-height: 60vh; /* Adjust hero height for smaller screens */
+        min-height: 60vh;
     }
+
     .hero-content {
-        padding-top: 20px; /* Reduce padding as navbar is dark now */
-        padding-bottom: 40px; /* Add some bottom padding */
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
+
     .hero-text h1 {
         font-size: 2.5rem;
     }
+
     .hero-text p {
         font-size: 1.1rem;
     }
 
-    /* General Sections */
     .section {
-        padding: 4rem 0; /* Reduce general section padding */
+        padding: 4rem 0;
     }
+
     .section-title h2 {
         font-size: 2rem;
     }
+
     .section-title .lead {
         font-size: 1.1rem;
     }
 
-    /* Feature Cards */
-    .features-section .col-lg-3 { /* Targeting the feature columns */
+    .features-section .col-lg-3 {
         flex: 0 0 auto;
-        width: 50%; /* Make them two columns on tablets/small laptops */
+        width: 50%;
     }
+
     .feature-card {
         padding: 1.5rem;
-        height: auto; /* Allow height to adjust */
+        height: auto;
     }
+
     .feature-icon {
         font-size: 2.5rem;
     }
+
     .feature-card h3 {
         font-size: 1.3rem;
     }
+
     .feature-card p {
         font-size: 0.9rem;
     }
 
-    /* App Screens sections */
     #home-screen .col-lg-6,
     #attendance .col-lg-6,
     #garden .col-lg-6,
     #parking .col-lg-6 {
-        margin-bottom: 2rem; /* Add margin when columns stack */
-        text-align: center; /* Center text when stacked */
+        margin-bottom: 2rem;
+        text-align: center;
     }
-    #attendance .col-lg-6.order-lg-2, /* Remove order on medium screens */
+
+    #attendance .col-lg-6.order-lg-2,
     #parking .col-lg-6.order-lg-2 {
-        order: initial !important; /* Reset order to default when stacked */
+        order: initial !important;
     }
+
     #attendance .col-lg-6.order-lg-1,
     #parking .col-lg-6.order-lg-1 {
         order: initial !important;
     }
+
     #home-screen .col-lg-6:last-child h3,
     #attendance .col-lg-6:first-child h3,
     #garden .col-lg-6:last-child h3,
     #parking .col-lg-6:first-child h3 {
         font-size: 1.5rem;
     }
+
     #home-screen .col-lg-6:last-child p,
     #attendance .col-lg-6:first-child p,
     #garden .col-lg-6:last-child p,
@@ -522,108 +515,118 @@ footer {
         font-size: 1rem;
     }
 
-
-    /* Download Section */
     .download-content h2 {
         font-size: 2.2rem;
     }
+
     .download-content p.lead {
         font-size: 1.1rem;
     }
 
-    /* Tech Stack Section */
     .tech-stack-section .col-md-3 {
         flex: 0 0 auto;
-        width: 33.333%; /* Keep 3 columns on medium screens (small tablets) */
+        width: 33.333%;
     }
+
     .tech-card {
         padding: 1rem;
     }
+
     .tech-icon {
         font-size: 2.5rem;
     }
+
     .tech-card h4 {
         font-size: 1.1rem;
     }
+
     .tech-card p {
         font-size: 0.8rem;
     }
 
-    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
+
     .footer-brand,
     .footer-slogan,
     .footer-social {
         width: 100%;
         margin-bottom: 20px;
     }
+
     .footer-slogan {
         padding: 0;
         font-size: 1.3rem;
     }
+
     .social-icons {
         justify-content: center;
     }
 }
 
-@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+@media (max-width: 767.98px) {
     .container {
         width: 90%;
     }
 
-    /* Hero Section */
     .hero {
         min-height: 50vh;
     }
+
     .hero-text h1 {
         font-size: 2rem;
     }
+
     .hero-text p {
         font-size: 1rem;
     }
 
-    /* General Sections */
     .section {
         padding: 3rem 0;
     }
+
     .section-title h2 {
         font-size: 1.8rem;
     }
+
     .section-title .lead {
         font-size: 1rem;
     }
 
-    /* Feature Cards (now stacked vertically) */
-    .features-section .col-sm-6 { /* Using col-sm-6 to make them two columns on mobile landscape */
+    .features-section .col-sm-6 {
         flex: 0 0 auto;
         width: 50%;
     }
+
     .feature-card {
         padding: 1rem;
     }
+
     .feature-icon {
         font-size: 2rem;
     }
+
     .feature-card h3 {
         font-size: 1.1rem;
     }
+
     .feature-card p {
         font-size: 0.85rem;
     }
 
-    /* App Screens sections (now stacked vertically) */
     .app-screen {
         margin-bottom: 1.5rem;
     }
+
     #home-screen .col-lg-6:last-child h3,
     #attendance .col-lg-6:first-child h3,
     #garden .col-lg-6:last-child h3,
     #parking .col-lg-6:first-child h3 {
         font-size: 1.3rem;
     }
+
     #home-screen .col-lg-6:last-child p,
     #attendance .col-lg-6:first-child p,
     #garden .col-lg-6:last-child p,
@@ -631,45 +634,50 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Download Section */
     .download-content h2 {
         font-size: 1.8rem;
     }
+
     .download-content p.lead {
         font-size: 1rem;
     }
+
     .download-btn {
         font-size: 0.9rem;
         padding: 0.7rem 1.5rem;
     }
 
-    /* Tech Stack Section (still in grid) */
-    .tech-stack-section .col-6 { /* Keep 2 columns on phones */
+    .tech-stack-section .col-6 {
         flex: 0 0 auto;
         width: 50%;
     }
+
     .tech-card {
         padding: 1rem 0.5rem;
     }
+
     .tech-icon {
         font-size: 2rem;
     }
+
     .tech-card h4 {
         font-size: 1rem;
     }
+
     .tech-card p {
         font-size: 0.75rem;
     }
 }
 
-@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+@media (max-width: 575.98px) {
     .navbar-brand img {
-        width: 200px; /* Even smaller logo */
+        width: 200px;
     }
 
     .hero-text h1 {
         font-size: 1.8rem;
     }
+
     .hero-text p {
         font-size: 0.9rem;
     }
@@ -677,25 +685,25 @@ footer {
     .section-title h2 {
         font-size: 1.6rem;
     }
+
     .section-title .lead {
         font-size: 0.9rem;
     }
 
-    /* Feature Cards (single column on very small phones) */
-    .features-section .col-sm-6 { /* Overriding col-sm-6 for single column */
+    .features-section .col-sm-6 {
         width: 100%;
     }
 
     .download-buttons {
-        flex-direction: column; /* Stack buttons vertically */
-    }
-    .download-btn {
-        width: 80%; /* Make buttons narrower for tiny screens */
-        margin: 0.5rem auto; /* Center buttons */
+        flex-direction: column;
     }
 
-    /* Tech Stack Section (single column on very small phones) */
-    .tech-stack-section .col-6 { /* Overriding col-6 for single column */
+    .download-btn {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+
+    .tech-stack-section .col-6 {
         width: 100%;
     }
 }

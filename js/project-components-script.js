@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.navbar');
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) { // Adjust this value as needed
-            navbar.classList.add('scrolled'); // Add 'scrolled' class
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled'); // Remove 'scrolled' class
+            navbar.classList.remove('scrolled');
         }
     });
 });

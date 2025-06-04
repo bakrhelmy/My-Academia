@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Academia - AI Model</title>
-      <link rel="stylesheet" href="./css/bootstrap.min.css">  
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/ai.css">
 </head>
@@ -12,16 +12,13 @@
     <header>
         <div class="container">
             <nav>
-        <div class="logo"><a href="index.html"><img src="images/Icon[1].png" alt=""></a></div>
-
-                <!-- <a href="#" class="logo">My Academia</a> -->
+                <div class="logo"><a href="index.html"><img src="images/Icon[1].png" alt=""></a></div>
                 <ul class="nav-links">
                     <a href="index.html">Home</a>
-            <a href="./Project-components.html">Project components</a>
-                <a href="./technologies-used.html">Technologies Used</a>
-          <a href="./about.html">Our Team</a>
-          <a href="./contact.html">Contact Us</a>
-                    
+                    <a href="./Project-components.html">Project components</a>
+                    <a href="./technologies-used.html">Technologies Used</a>
+                    <a href="./about.html">Our Team</a>
+                    <a href="./contact.html">Contact Us</a>
                 </ul>
             </nav>
         </div>
@@ -52,7 +49,7 @@
                     <h3>Student Recognition</h3>
                     <p>Automatically records attendance by recognizing enrolled students.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">👨‍🏫</div>
                     <h3>Instructor Recognition</h3>
@@ -106,7 +103,7 @@
                             <div class="gallery-item" onclick="openModal('./images/adasas (1).jpg')">
                                 <img src="images/adasas (1).jpg" alt="Data Collection">
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -137,7 +134,7 @@
                             <div class="gallery-item" onclick="openModal('https://i.postimg.cc/HWfhSm6z/Whats-App-Image-2025-05-27-at-02-36-27-5f010cee.jpg')">
                                 <img src="https://i.postimg.cc/HWfhSm6z/Whats-App-Image-2025-05-27-at-02-36-27-5f010cee.jpg" alt="Data Augmentation">
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -163,7 +160,7 @@
                     <p>Computer vision for image processing</p>
                 </div>
                 <div class="tech-card">
-                    <img  class="x2xxx"  src="images/1_Dy8k71XcMt7Mhp79YsVIgw.png" alt="Albumentations">
+                    <img class="x2xxx" src="images/1_Dy8k71XcMt7Mhp79YsVIgw.png" alt="Albumentations">
                     <h5>Albumentations</h5>
                     <p>Advanced image augmentation</p>
                 </div>
@@ -173,7 +170,7 @@
                     <p>Data manipulation and analysis</p>
                 </div>
                 <div class="tech-card">
-                    <img class="x2xxx"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1280px-NumPy_logo_2020.svg.png" alt="NumPy">
+                    <img class="x2xxx" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1280px-NumPy_logo_2020.svg.png" alt="NumPy">
                     <h3>NumPy</h3>
                     <p>Numerical operations</p>
                 </div>
@@ -204,11 +201,11 @@
             <div class="footer-id">
                 <img src="images/Icon[1].png" alt="My Academia Logo">
             </div>
-            
+
             <div class="footer-connect">
                 Every Corner,Every Details...In Your Control
             </div>
-            
+
             <div class="social-links">
                 <div class="connect-text">Connect with us</div>
                 <div class="social-icons">
@@ -222,7 +219,6 @@
         </div>
     </div>
 </footer>
-    <!-- Image Modal -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
@@ -230,18 +226,16 @@
     </div>
 
     <script>
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-        
-        // Animation for elements when they come into view
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -250,27 +244,25 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         document.querySelectorAll('.feature-card, .step, .tech-card').forEach(element => {
             element.style.opacity = 0;
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(element);
         });
-        
-        // Modal functionality
+
         function openModal(src) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById("modalImage");
             modal.style.display = "block";
             modalImg.src = src;
         }
-        
+
         function closeModal() {
             document.getElementById('imageModal').style.display = "none";
         }
-        
-        // Close modal when clicking outside the image
+
         window.onclick = function(event) {
             const modal = document.getElementById('imageModal');
             if (event.target == modal) {

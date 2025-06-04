@@ -99,11 +99,11 @@
                 </div>
                 <div class="component-content col-md-8 col-12">
                     <p>
-                        <strong>🔍 What it does:</strong> Monitors <strong>soil moisture levels</strong> using electrical conductivity, ensuring the soil stays adequately watered.<br><br>
+                        <strong>🔍 What it does:</strong> Monitors **soil moisture levels** using electrical conductivity, ensuring the soil stays adequately watered.<br><br>
                         <strong>⚙️ How it works:</strong><br>
-                        - Produces an <strong>analog voltage</strong> (0–3.3V) based on moisture level.<br>
-                        - Connected to an <strong>ESP32 analog pin</strong> (ADC).<br>
-                        - When moisture drops <strong>below a predefined threshold</strong>, the ESP32 <strong>automatically activates the water pump</strong> to irrigate the garden.
+                        - Produces an **analog voltage** (0–3.3V) based on moisture level.<br>
+                        - Connected to an **ESP32 analog pin** (ADC).<br>
+                        - When moisture drops **below a predefined threshold**, the ESP32 **automatically activates the water pump** to irrigate the garden.
                     </p>
                 </div>
             </div>
@@ -123,8 +123,8 @@
                     <p>
                         <strong>🔍 What it does:</strong> Supplies water to the garden automatically when soil moisture is low.<br><br>
                         <strong>⚙️ How it works:</strong><br>
-                        - Operated through a <strong>5V or 12V relay module</strong>, since the <strong>ESP32 can’t directly drive high-voltage loads</strong>.<br>
-                        - The <strong>relay is triggered via a digital pin (GPIO23)</strong> on the ESP32.<br>
+                        - Operated through a **5V or 12V relay module**, since the **ESP32 can’t directly drive high-voltage loads**.<br>
+                        - The **relay is triggered via a digital pin (GPIO23)** on the ESP32.<br>
                         - Once activated, the pump delivers water as needed based on real-time soil readings.
                     </p>
                 </div>
@@ -145,8 +145,8 @@
                     <p>
                         <strong>🔍 What it does:</strong> Controls high-power devices like pumps and fans by using low-voltage signals from the ESP32.<br><br>
                         <strong>⚙️ How it works:</strong><br>
-                        - The <strong>ESP32 sends a 3.3V signal</strong> to the relay's control pin.<br>
-                        - The <strong>relay acts as a switch</strong>, allowing high-voltage devices to be turned ON or OFF safely.<br>
+                        - The **ESP32 sends a 3.3V signal** to the relay's control pin.<br>
+                        - The **relay acts as a switch**, allowing high-voltage devices to be turned ON or OFF safely.<br>
                         - Ensures isolation between the microcontroller and high-power circuits.
                     </p>
                 </div>
@@ -167,8 +167,8 @@
                     <p>
                         <strong>🔍 What it does:</strong> Measures environmental temperature and humidity levels in real time within the garden.<br><br>
                         <strong>⚙️ How it works:</strong><br>
-                        - Communicates with the ESP32 through a <strong>digital pin (GPIO18)</strong>.<br>
-                        - When the <strong>temperature exceeds a set threshold</strong>, the ESP32 activates the <strong>12V cooling fan</strong> using a relay.<br>
+                        - Communicates with the ESP32 through a **digital pin (GPIO18)**.<br>
+                        - When the **temperature exceeds a set threshold**, the ESP32 activates the **12V cooling fan** using a relay.<br>
                         - Enables smart climate control for the garden system.
                     </p>
                 </div>
@@ -189,8 +189,8 @@
                     <p>
                         <strong>🔍 What it does:</strong> Provides automatic cooling for the garden area to maintain optimal environmental conditions.<br><br>
                         <strong>⚙️ How it works:</strong><br>
-                        - Operated through a <strong>relay module</strong>, similar to the water pump.<br>
-                        - The <strong>ESP32</strong> activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
+                        - Operated through a **relay module**, similar to the water pump.<br>
+                        - The **ESP32** activates the fan when temperature readings (from the DHT11 sensor) exceed a certain threshold.<br>
                         - Helps protect plants from heat stress in hot weather.
                     </p>
                 </div>
@@ -208,51 +208,26 @@
                 </div>
                 <div class="component-content col-md-8 col-12">
                     <p>
-                        <strong>🔍 What it does:</strong> The <strong>ESP32 module</strong> serves as the <strong>central processing and communication unit</strong> for the smart garden, collecting real-time sensor data, processing information, and controlling actuators.<br><br>
+                        <strong>🔍 What it does:</strong> The **ESP32 module** serves as the **central processing and communication unit** for the smart garden, collecting real-time sensor data, processing information, and controlling actuators.<br><br>
 
                         <strong>Key Functions:</strong><br><br>
 
                         <strong>1. Sensor Interfacing</strong><br>
-                        <strong>🔍 What it does:</strong> Connects to various <strong>analog and digital sensors</strong> (e.g., Soil Moisture, DHT11) to monitor garden conditions.<br>
-                        <strong>⚙️ How it works:</strong> <br>ADC (Analog-to-Digital Converter) reads <strong>analog values</strong> (e.g., soil moisture).<br>GPIO pins read <strong>digital signals</strong> (e.g., from DHT11).<br><br>
+                        <strong>🔍 What it does:</strong> Connects to various **analog and digital sensors** (e.g., Soil Moisture, DHT11) to monitor garden conditions.<br>
+                        <strong>⚙️ How it works:</strong> <br>ADC (Analog-to-Digital Converter) reads **analog values** (e.g., soil moisture).<br>GPIO pins read **digital signals** (e.g., from DHT11).<br><br>
 
                         <strong>2. Data Processing</strong><br>
                         <strong>🔍 What it does:</strong> Analyzes incoming sensor data and triggers automated actions.<br>
-                        <strong>⚙️ How it works:</strong> <br>Compares sensor readings to predefined <strong>thresholds</strong> (e.g., soil moisture < 30% → activate water pump).<br>Runs <strong>lightweight algorithms</strong> for intelligent irrigation and climate control.<br><br>
+                        <strong>⚙️ How it works:</strong> <br>Compares sensor readings to predefined **thresholds** (e.g., soil moisture < 30% → activate water pump).<br>Runs **lightweight algorithms** for intelligent irrigation and climate control.<br><br>
 
                         <strong>3. Wireless Communication</strong><br>
-                        <strong>🔍 What it does:</strong> Transmits garden data to <strong>Firebase</strong> and receives commands from the mobile app.<br>
-                        <strong>⚙️ How it works:</strong> <br>The built-in <strong>Wi-Fi module</strong> connects to a local network.<br>Uses <strong>HTTP/MQTT protocols</strong> to sync data with Firebase in real-time.<br><br>
+                        <strong>🔍 What it does:</strong> Transmits garden data to **Firebase** and receives commands from the mobile app.<br>
+                        <strong>⚙️ How it works:</strong> <br>The built-in **Wi-Fi module** connects to a local network.<br>Uses **HTTP/MQTT protocols** to sync data with Firebase in real-time.<br><br>
                     </p>
                 </div>
             </div>
         </section>
     </section>
-
-    <!-- <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-id">
-                    <img src="images/Icon[1].png" alt="My Academia Logo">
-                </div>
-
-                <div class="footer-connect">
-                    Every Corner,Every Details...In Your Control
-                </div>
-
-                <div class="social-links">
-                    <div class="connect-text">Connect with us</div>
-                    <div class="social-icons">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> -->
 
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/all.min.js"></script>

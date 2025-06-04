@@ -10,7 +10,7 @@
     font-family: 'Rubik', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Essential for responsive design */
+    box-sizing: border-box;
 }
 
 body {
@@ -18,51 +18,44 @@ body {
 }
 
 .container {
-    width: 85%; /* Adjusted for slightly more content width */
+    width: 85%;
     margin: 0 auto;
 }
 
-/* --- Header & Hero Section --- */
 .home {
-    /* Assuming a background image for this page's hero section based on context */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.postimg.cc/h4bDHm5P/close-up-hardware-component-background.jpg') no-repeat center center/cover;
     height: 80vh;
-    padding-top: 5px; /* Initial padding, will be adjusted by fixed-top navbar */
+    padding-top: 5px;
     position: relative;
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack header and section */
-    justify-content: flex-start; /* Align items from the start */
-    align-items: center; /* Center items horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-/* Ensure content stays above overlay */
-.home > header, .home > section {
+.home > header,
+.home > section {
     position: relative;
     z-index: 1;
-    width: 100%; /* Take full width */
+    width: 100%;
 }
 
-/* Navbar adjustments for fixed-top */
 .navbar {
-    /* z-index: 1020; Ensure navbar is above other content */
-    background-color: transparent !important; /* Start transparent */
+    background-color: transparent !important;
     padding: 20px 0;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    width: 100%; /* Ensure navbar takes full width */
-    z-index: 1030; /* Higher z-index for fixed navbar */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    z-index: 1030;
 }
 
-/* Add a background to the navbar when scrolled */
-.navbar.scrolled { /* This class will be added by JavaScript */
-    background-color: rgba(11, 33, 49, 0.95) !important; /* Darker background on scroll */
-}
+
 
 .navbar-brand img {
-    width: 100%; /* Adjust logo size for desktop */
+    width: 100%;
 }
 
 .navbar-nav .nav-link {
-    color: white !important; /* White links for dark navbar background */
+    color: white !important;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 500;
@@ -74,30 +67,29 @@ body {
     color: var(--secondary-blue) !important;
 }
 
-/* Hero Section Content */
 .home section {
-    flex-grow: 1; /* Allows the section to fill remaining space */
+    flex-grow: 1;
     display: flex;
-    align-items: center; /* Vertically center content within section */
-    padding-top: 70px; /* Added padding to ensure content is below the fixed navbar initially */
+    align-items: center;
+    padding-top: 70px;
 }
 
 .front {
     display: flex;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 .discription {
-    width: 80%; /* Adjusted width for better readability on desktop */
+    width: 80%;
     text-align: center;
-    padding-top: 0; /* Remove specific padding, let flexbox handle it */
+    padding-top: 0;
 }
 
 .text h1 {
     color: white;
-    font-size: 2.8rem; /* Adjusted for better readability */
+    font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -108,12 +100,11 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 30px;
-    max-width: 700px; /* Limit paragraph width */
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Buttons (if needed, currently commented out in HTML) */
 .butt .btn {
     background-color: var(--secondary-blue);
     color: white;
@@ -133,22 +124,20 @@ body {
     box-shadow: 0 6px 12px rgba(0, 156, 204, 0.4);
 }
 
-/* Hide .imgg on this page if not used */
 .imgg {
     display: none;
 }
 
-/* --- Technologies Section --- */
 .technologies {
-    padding: 80px 0; /* Increased padding */
-    background-color: #f8f9fa; /* Light background for this section */
+    padding: 80px 0;
+    background-color: #f8f9fa;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 60px; /* Increased margin */
-    font-size: 2.5rem; /* Adjusted font size */
-    color: var(--primary-blue); /* Using variable */
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
     position: relative;
 }
 
@@ -157,18 +146,18 @@ body {
     display: block;
     width: 80px;
     height: 4px;
-    background: var(--secondary-blue); /* Using variable */
+    background: var(--secondary-blue);
     margin: 15px auto 0;
 }
 
 .tech-category {
-    margin-bottom: 70px; /* Increased margin */
+    margin-bottom: 70px;
 }
 
 .category-title {
-    font-size: 1.8rem; /* Adjusted font size */
-    color: var(--primary-blue); /* Using variable */
-    margin-bottom: 30px; /* Increased margin */
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 2px solid #eaeaea;
 }
@@ -185,9 +174,9 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex; /* Use flex for content and image layout */
-    flex-direction: column; /* Stack vertically */
-    height: 100%; /* Ensure cards have equal height in row */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .tech-card:hover {
@@ -198,7 +187,7 @@ body {
 .tech-image {
     height: 200px;
     overflow: hidden;
-    flex-shrink: 0; /* Prevent image from shrinking */
+    flex-shrink: 0;
 }
 
 .tech-image img {
@@ -214,28 +203,28 @@ body {
 
 .tech-content {
     padding: 20px;
-    flex-grow: 1; /* Allow content to take remaining space */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .tech-content h3 {
-    font-size: 1.5rem; /* Adjusted font size */
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--primary-blue); /* Using variable */
+    color: var(--primary-blue);
 }
 
 .tech-content p {
     color: #7f8c8d;
     margin-bottom: 15px;
-    flex-grow: 1; /* Allow paragraph to take space */
+    flex-grow: 1;
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto; /* Push tags to the bottom */
+    margin-top: auto;
 }
 
 .tech-tag {
@@ -243,17 +232,15 @@ body {
     color: #00838f;
     padding: 5px 10px;
     border-radius: 20px;
-    font-size: 0.85rem; /* Adjusted font size */
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
 .hall {
     text-decoration: none;
-    color: inherit; /* Inherit color so text doesn't become blue */
+    color: inherit;
 }
 
-
-/* --- Footer (Copied from previous response, adjust if needed) --- */
 footer {
     background-color: var(--primary-blue);
     color: white;
@@ -330,11 +317,9 @@ footer {
     transform: translateY(-3px);
 }
 
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint for navbar collapse */
+@media (max-width: 991.98px) {
     .navbar-collapse {
-        background-color: var(--primary-blue); /* Background for mobile menu */
+        background-color: var(--primary-blue);
         padding: 15px;
         border-radius: 5px;
         margin-top: 10px;
@@ -349,26 +334,25 @@ footer {
     }
 
     .navbar-brand img {
-        width: 100%; /* Smaller logo on mobile */
+        width: 100%;
     }
 
-    /* Hero section adjustments for smaller screens */
     .home {
-        height: auto; /* Allow height to adjust */
-        min-height: 50vh; /* Minimum height to keep hero visible */
+        height: auto;
+        min-height: 50vh;
     }
 
     .home section {
-        padding-top: 20px; /* Reduce padding as navbar is dark now */
-        padding-bottom: 40px; /* Add some bottom padding */
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
 
     .front {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column;
     }
 
     .discription {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%;
         text-align: center;
     }
 
@@ -381,10 +365,9 @@ footer {
     }
 
     .imgg {
-        display: none; /* Ensure image is hidden on smaller screens */
+        display: none;
     }
 
-    /* Technologies Section */
     .section-title {
         font-size: 2rem;
         margin-bottom: 40px;
@@ -396,16 +379,16 @@ footer {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust min-width for tech cards */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
     }
 
     .tech-card {
-        height: auto; /* Allow cards to adjust height */
+        height: auto;
     }
 
     .tech-image {
-        height: 150px; /* Smaller image height */
+        height: 150px;
     }
 
     .tech-content h3 {
@@ -417,27 +400,27 @@ footer {
     }
 }
 
-
-@media (max-width: 767.98px) { /* Bootstrap's 'md' breakpoint */
+@media (max-width: 767.98px) {
     .container {
         width: 90%;
     }
 
-    /* Hero Section */
     .home {
-        min-height: 40vh; /* Even smaller min-height */
+        min-height: 40vh;
     }
+
     .home section {
-        padding-top: 10px; /* Further adjust padding */
+        padding-top: 10px;
     }
+
     .text h1 {
         font-size: 1.8rem;
     }
+
     .text p {
         font-size: 0.9rem;
     }
 
-    /* Technologies Section */
     .section-title {
         font-size: 1.8rem;
     }
@@ -447,12 +430,12 @@ footer {
     }
 
     .tech-grid {
-        grid-template-columns: 1fr; /* Single column layout for very small screens */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
     .tech-image {
-        height: 180px; /* Adjust height for single column display */
+        height: 180px;
     }
 
     .tech-content {
@@ -467,7 +450,6 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -491,9 +473,9 @@ footer {
     }
 }
 
-@media (max-width: 575.98px) { /* Bootstrap's 'sm' breakpoint */
+@media (max-width: 575.98px) {
     .navbar-brand img {
-        width: 200px; /* Even smaller logo on very small screens */
+        width: 200px;
     }
 
     .text h1 {

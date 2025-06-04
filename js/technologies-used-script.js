@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.navbar');
 
-    // Navbar scroll effect
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) { // Adjust this value as needed
-            navbar.classList.add('scrolled'); // Add 'scrolled' class
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled'); // Remove 'scrolled' class
+            navbar.classList.remove('scrolled');
         }
     });
 
-    // Simple animation for tech cards when they come into view
     const techCards = document.querySelectorAll('.tech-card');
 
     const observer = new IntersectionObserver((entries) => {
@@ -20,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+    }, { threshold: 0.1 });
 
     techCards.forEach(card => {
         card.style.opacity = '0';
